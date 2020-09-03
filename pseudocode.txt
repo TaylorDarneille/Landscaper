@@ -18,7 +18,7 @@ oldLawnmower = 0
 newLawnmower = 0
 team = 0
 
-STAGES
+STAGES OF GAME 
 
 -- teeth
 
