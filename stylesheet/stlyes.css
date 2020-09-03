@@ -1,0 +1,16 @@
+/*use a grid*/
+
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+button {
+    width: 25vw;
+    height: 25vh;
+    color: red;
+    margin-top: 20vh;
+}
