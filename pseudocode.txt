@@ -12,11 +12,26 @@ while loop? so the prompt keeps going until a certain condition is met -- if mon
 
 VARIABLES
 
+* numbers:
 money = 0 
 scissors = 0
 oldLawnmower = 0
 newLawnmower = 0
 team = 0
+
+* booleans:
+hasScissors = false
+hasOldLawnmower = false
+hasNewLawnmower = false 
+hasTeam = false 
+
+* arrays:
+tools = []
+
+BOOLEANS 
+
+if 
+
 
 STAGES OF GAME 
 
@@ -27,12 +42,21 @@ this can be repeated as many times as you want
 2. buy pair of rusty scissors for $5 --> less $5
 can only be done once --> move to scissors stage
 
+PROMPT: Welcome to the landscaping business! You currently have no $money and no tools. What would you like to do?
+
+INPUT OPTIONS: Type: cut lawns (earn $1), buy pair of rusty scissors (spend $5), exit 
+(do we want exit option?)
+
 -- scissors
 
 1. cut lawns --> add $5
 this can be repeated as many times as you want
 2. buy old-timey push lawnmower for $25 --> less $25 
 can only be done once --> move to old-timey lawnmower stage 
+
+PROMPT: You currently have a pair of rusty scissors. What would you like to do? 
+
+INPUT OPTIONS: Type: cut lawns (earn $5), buy old-timey lawnmower (spend $25), exit 
 
 -- old-timey lawnmower 
 
@@ -41,6 +65,10 @@ this can be repeated as many times as you want
 2. buy fancy battery-powered lawnmower for $250 --> less $250 
 can only be done once --> move to fancy lawnmower stage 
 
+PROMPT: You currently have an old-timey lawnmower. What would you like to do?
+
+INPUT OPTIONS: Type: cut lawns (earn $50), buy fancy battery-powered lawnmower (spend $250), exit 
+
 -- fancy battery-powered lawnmower 
 
 1. cut lawns --> add $100 
@@ -48,12 +76,22 @@ this can be repeated as many times as you want
 2. hire team of starving students for $500 
 can only be done once --> move to team stage 
 
+PROMPT: You currently have a fancy battery-powered lawnmower. What would you like to do? 
+
+INPUT OPTIONS: Type: cut lawns (earn $100), hire team of students (spend $500), exit 
+
 -- team of starving students 
 
 1. cut lawns --> add $250 
 this can be repeated as many times as you want 
 2. once user earns $1000 --> win the game
 
+PROMPT: You currently have a team of starving students ready. What would you like to do? 
+
+INPUT OPTIONS: Type: cut lawns (earn $250), exit 
+
 -- winning stage 
 
 1. send a message to the user telling them they won
+
+
