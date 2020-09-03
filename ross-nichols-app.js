@@ -9,7 +9,7 @@ console.log("test 2")
 //const cutGrass = prompt("Would you like to cut grass today? You can only use your teeth, but you'll earn a dollar.", "Yes / No")
 
 let money
-let tools = ["teeth"]
+let tools = ["teeth", "rusty scissors"]
 
 const start = () => {
     money = 0
@@ -23,6 +23,7 @@ const showStatus = () => {
 
 const decision = () => {
     showStatus()
+    
     const choice = prompt("Do you want to cut grass?", "Yes / No / Restart")
 
     if(choice === "Yes") {
@@ -32,11 +33,13 @@ const decision = () => {
     } else if(choice === "Restart") {
         start()
     }
+    
 }
 
 const bank = () => {
     //invoke function to add money. should be called if decision = yes
     money += 1
+    toolTree()
     decision()
 }
 
@@ -46,4 +49,21 @@ const rest = () => {
     //use a timeout function here?
 }
 
-//start()
+const toolTree = () => {
+    //prompt similar to choice
+    //if yes, change implement and deduct 5
+    //if no, no action
+    if(money >= 5) {
+        showStatus()
+        const option = prompt("You have $5. Do you want to buy rusty scissors? The cost is $5", "Yes / No")
+        if(option === "Yes" && implement != tools[0]) {
+            money -=5
+            implement = tools[1]
+            decision()
+        } else {
+            decision()
+        }    
+    }
+}
+
+start()
