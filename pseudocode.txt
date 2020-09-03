@@ -1,0 +1,59 @@
+LANDSCAPER DELIVERABLE 
+
+app must have:
+1. ability to take user input -- prompt
+2. ability for user to earn money -- money declared as a variable 
+3. ability to buy tools -- every tool declared as a variable (in case we do the bonus challenge)
+4. ability to win the game and end it -- conditional statement if user has certain amount of money AND certain tool, game ends and prompt ends
+
+THOUGHTS
+
+while loop? so the prompt keeps going until a certain condition is met -- if money is NOT $1000 and team is equal to 0 or less 
+
+VARIABLES
+
+money = 0 
+scissors = 0
+oldLawnmower = 0
+newLawnmower = 0
+team = 0
+
+STAGES
+
+-- teeth
+
+1. cut lawns --> add $1
+this can be repeated as many times as you want
+2. buy pair of rusty scissors for $5 --> less $5
+can only be done once --> move to scissors stage
+
+-- scissors
+
+1. cut lawns --> add $5
+this can be repeated as many times as you want
+2. buy old-timey push lawnmower for $25 --> less $25 
+can only be done once --> move to old-timey lawnmower stage 
+
+-- old-timey lawnmower 
+
+1. cut lawns --> add $50 
+this can be repeated as many times as you want 
+2. buy fancy battery-powered lawnmower for $250 --> less $250 
+can only be done once --> move to fancy lawnmower stage 
+
+-- fancy battery-powered lawnmower 
+
+1. cut lawns --> add $100 
+this can be repeated as many times as you want 
+2. hire team of starving students for $500 
+can only be done once --> move to team stage 
+
+-- team of starving students 
+
+1. cut lawns --> add $250 
+this can be repeated as many times as you want 
+2. once user earns $1000 --> win the game
+
+-- winning stage 
+
+1. send a message to the user telling them they won
