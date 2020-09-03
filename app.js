@@ -2,12 +2,21 @@
 
  let money= 0;
 
-//!!!!!ALL FUNCTIONS THAT ARE NESTED MUST BE WRITTEN ABOVE WHERE IT IS CALLED!!! 
+//!!FUNCTIONS GO HERE
+    //all functions that are nested must be written ABOVE where it is called
 
  //a function that alerts user how much money they have, made so that it can be called within several different functions 
  let howMuch= () => {
      alert('You now have $'+ money);
  }
+
+ let cutWithSci= () => {
+    let cutSci= prompt('Do you want to cut the lawn with the rusty scissors to make money faster?', 'Yes/No');
+    if(cutSci=== 'Yes' || cutSci=== 'yes'){
+        money= money + 5;
+        howMuch();
+    }
+}
 
  //function, that is later nested, to ask user if they want to buy scissors, once they can afford it 
  let buyScissors= () => {
@@ -16,9 +25,14 @@
     if(rustSci=== 'Yes' || rustSci=== 'yes'){
         money= money-5;
         howMuch();
+        //runs cutWithSci function while user agreed to buy scissors
+        while(rustSci=== 'Yes' || rustSci=== 'yes'){
+            cutWithSci();
+        }
     }
 }
 
+//BEGINNING 
 // prompt('Do you want to cut lawns?', 'Yes/No');
 let askCut= null;
 while(askCut !== 'cancel'){
@@ -32,7 +46,7 @@ while(askCut !== 'cancel'){
             buyScissors();
         }
     }else if(cutLawn=== 'No' || cutLawn=== 'no'){
-        alert('You made no money');
+        alert('You can\'t make money if you don\'t cut lawns');
     }    
 }
 
