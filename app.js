@@ -1,4 +1,5 @@
 let playGame;
+let bankRoll = 0;
 document.addEventListener('DOMContentLoaded', function () {
     let startButton = document.querySelector('#startButton');
 
@@ -12,6 +13,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
     startButton.addEventListener("click", start);
 
+    let teethButton = document.querySelector('#button1');
+    let bank = document.querySelector('#bankRoll');
+    let cutTeeth = () => {
+        bankRoll++;
+        bank.innerText = bankRoll;
+    }
+    teethButton.addEventListener('click', cutTeeth);
 });
 
 
