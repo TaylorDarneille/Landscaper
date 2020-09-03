@@ -1,5 +1,6 @@
 let money = 5 ;
 let rustyScissor = false;
+let lawnmower = false;
 
 const start = () => {
     useTeeth()
@@ -39,17 +40,29 @@ const getScissor = () => {
 const useScissor = () => {
     let usingScissors = prompt("Want to spend the day cutting grass with your rusty scissors?","Yes or No")
     if (usingScissors === "Yes" && (money > 25 || money < 25)){
-      money =+ 5
+      money += 5
       alert("Money: $"+ money)
-      start()
+      useScissor()
       }else if (usingScissors=== "Yes" && money === 25){
-            ("Money: $"+ money+" || You have a landmower")
-           getScissor()
+            ("Money: $"+ money+" || You have a pair of rusty scissors")
+           getLawnmower()
        } else if ( usingScissors === "No"){
            useScissor()
 } else {
     useScissor()
 }
 }
-start()
 
+const getLawnmower = () => {
+    let gettingLandmower = prompt("Do you want to buy a Lawnmower?","Yes or No")
+    if (gettingLandmower === "Yes"){
+        money -= 25
+        lawnmower = true 
+        alert("Money: $"+ money+" || You have a lawnmower")
+        // useLawnmower()
+      }else if (gettingLandmower === "No"){
+          useScissor()
+    }
+}
+
+start()
