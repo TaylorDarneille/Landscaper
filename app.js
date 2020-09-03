@@ -54,8 +54,8 @@ const buyTool = () =>{
   }
 }
 const cutGrass = () => {
-  money += tool.revenue
-  day++
+  money += tool.revenue;
+  day++;
   askForAction();
 }
 
