@@ -38,6 +38,7 @@ const getScissor = () => {
 }
 
 const useScissor = () => {
+    while( lawnmower === false){
     let usingScissors = prompt("Want to spend the day cutting grass with your rusty scissors?","Yes or No")
     if (usingScissors === "Yes" && (money > 25 || money < 25)){
       money += 5
@@ -48,9 +49,12 @@ const useScissor = () => {
            getLawnmower()
        } else if ( usingScissors === "No"){
            useScissor()
-} else {
-    useScissor()
-}
+
+        }
+    }
+    if ( lawnmower === true){
+        useLawnmower()
+    }
 }
 
 const getLawnmower = () => {
@@ -59,10 +63,30 @@ const getLawnmower = () => {
         money -= 25
         lawnmower = true 
         alert("Money: $"+ money+" || You have a lawnmower")
-        // useLawnmower()
+          useLawnmower()
       }else if (gettingLandmower === "No"){
           useScissor()
     }
+}
+
+const useLawnmower = () => {
+    //while( lawnmower === false){
+        let usingLawnmower = prompt("Want to spend the day cutting grass with your lawnmower?","Yes or No")
+        if (usingLawnmower === "Yes" && (money > 25 || money < 25)){
+          money += 50
+          alert("Money: $"+ money)
+          useLawnmower()
+          //}else if (usingLawnmower=== "Yes" && money === 50){
+                //("Money: $"+ money+" || You have a pair of rusty scissors")
+               //getLawnmower()
+           } else if ( usingLawnmower === "No"){
+               useLawnmower()
+    
+            }
+       // }
+        //if ( lawnmower === true){
+            //useLawnmower()
+        //}
 }
 
 start()
