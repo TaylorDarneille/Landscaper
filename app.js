@@ -10,17 +10,28 @@
      alert('You now have $'+ money);
  }
 
+let cutWithOldMower= () => {
+    let cutOldMower= prompt('Do you want to cut the lawn with the old push lawn mower to earn $50?', 'Yes/No');
+    if(cutOldMower=== 'Yes' || cutOldMower=== 'yes'){
+        money+=50;
+        howMuch();
+    }
+}
+
  let buyOldMower= ()=> {
     let oldMower= prompt('You can now afford an old push lawnmower for $25, do you want to buy?', 'Yes/No');
     if(oldMower=== 'Yes'|| oldMower=== 'yes'){
         money= money-25;
         howMuch();
-        //cutWithOldMower();
+        //without this while statement, prompt will revert back to cutSci 
+        while(oldMower=== 'Yes'|| oldMower=== 'yes'){
+            cutWithOldMower();
+        }
     }
 }
 
  let cutWithSci= () => {
-    let cutSci= prompt('Do you want to cut the lawn with the rusty scissors to make money faster?', 'Yes/No');
+    let cutSci= prompt('Do you want to cut the lawn with the rusty scissors to earn $5?', 'Yes/No');
     //using while(money< 25) to get the function to stop running and move onto the if statement down below in the non function code, it stopped but didnt move on, idk why
     if(cutSci=== 'Yes' || cutSci=== 'yes'){
         money= money + 5;
@@ -40,6 +51,7 @@
         money= money-5;
         howMuch();
         //runs cutWithSci function while user agreed to buy scissors
+        //without this while statement, prompt will revert back to og prompt cutLawn
         while(rustSci=== 'Yes' || rustSci=== 'yes'){
             cutWithSci();
         }
