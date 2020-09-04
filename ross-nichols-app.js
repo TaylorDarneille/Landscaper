@@ -79,10 +79,18 @@ const toolTree = () => {
     }
 
     if(money >= 25 && implement !== tools[2]) {
-        const option = prompt("You have 25. Do you want to upgrade to a push-mower?"," Yes / No")
+        const option = prompt("You have $25. Do you want to upgrade to a push-mower?"," Yes / No")
         if(option === "Yes") {
             money -= 25
             implement = tools[2]
+        }
+    }
+
+    if(money >= 250 && implement !== tools[3]) {
+        const option = prompt("You have $250. Do you want to upgrade to a battery-powered mower?", "Yes / No")
+        if(option === "Yes") {
+            money -= 250
+            implement === tools[3]
         }
     }
     showStatus()
