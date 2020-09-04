@@ -9,17 +9,29 @@
     alert('You now have $'+ money);
  }
 
+let cutWithStudentWorkers= () => {
+    let cutStudentWorkers= prompt('Do you want to cut lawns with your hired team of students to earn $250?', 'Yes/No');
+    if(cutStudentWorkers=== 'Yes' || cutStudentWorkers=== 'yes'){
+        money+=250;
+        howMuch();
+    }
+}
+
+
 let buyStudentWorkers= () => {
     let studentWorkers= prompt('You can now afford to pay some starving student workers to help you mow lawns, do you want to pay them $500?', 'Yes/No');
     if(studentWorkers=== 'Yes' || studentWorkers=== 'yes'){
         money-=500;
         howMuch();
     }
+    while(studentWorkers=== 'Yes' || studentWorkers=== 'yes'){
+        cutWithStudentWorkers();
+    }
 }
 
 
 let cutWithFancyMower= () => {
-    let cutFancyMower= prompt('Do you want to cut the lawn with the fancy new battery-powered lawnmover to earn $100?', 'Yes/No');
+    let cutFancyMower= prompt('Do you want to cut lawns with the fancy new battery-powered lawnmover to earn $100?', 'Yes/No');
     if(cutFancyMower=== 'Yes' || cutFancyMower=== 'yes'){
         money+=100;
         howMuch();
@@ -28,7 +40,6 @@ let cutWithFancyMower= () => {
         buyStudentWorkers();
     }
 }
-
 
 
 let buyFancyMower= () => {
@@ -44,7 +55,7 @@ let buyFancyMower= () => {
 
 
 let cutWithOldMower= () => {
-    let cutOldMower= prompt('Do you want to cut the lawn with the old push lawnmower to earn $50?', 'Yes/No');
+    let cutOldMower= prompt('Do you want to cut lawns with the old push lawnmower to earn $50?', 'Yes/No');
     if(cutOldMower=== 'Yes' || cutOldMower=== 'yes'){
         money+=50;
         howMuch();
