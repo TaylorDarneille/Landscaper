@@ -9,11 +9,18 @@
     alert('You now have $'+ money);
  }
 
+ let userWon= () => {
+     alert('You have won at the art of landscaping. King. (or Queen)');
+ }
+
 let cutWithStudentWorkers= () => {
     let cutStudentWorkers= prompt('Do you want to cut lawns with your hired team of students to earn $250?', 'Yes/No');
     if(cutStudentWorkers=== 'Yes' || cutStudentWorkers=== 'yes'){
         money+=250;
         howMuch();
+    }
+    if(money>=1000){
+        userWon();
     }
 }
 
