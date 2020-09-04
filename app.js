@@ -236,7 +236,7 @@ const earnMoneyWithBatteryLawnmower = ()=>{
         }if ( day18 === "No"){
         alert("Sorry to see you go, You have" + money)
       }
-    let day19= prompt("Welcome to day 14. Cut grass to earn $ 100", "Yes or No")
+    let day19= prompt("Welcome to day 19. Cut grass to earn $ 100", "Yes or No")
         if ( day19 === "Yes"){
         money += 100
         alert("Now you have $" + money)
@@ -268,3 +268,48 @@ const earnMoneyWithBatteryLawnmower = ()=>{
     return
  }
  hireTeam()
+
+ const earnMoneyWithTeam = ()=>{
+
+    let day21= prompt("Welcome to day 21 . Cut grass to earn $ 200", "Yes or No")
+        if ( day21 === "Yes"){
+    money += 200
+    alert("Now you have $ " + money)
+        }if ( day21 === "No"){
+    alert("Sorry to see you go, You have" + money)
+
+        }
+    let day22= prompt("Welcome to day 22. Cut grass to earn $ 200", "Yes or No")
+        if ( day22 === "Yes"){
+        money += 200
+        alert("Now you have $" + money)
+        }if ( day22 === "No"){
+        alert("Sorry to see you go, You have" + money)
+
+        }
+    
+    let day23= prompt("Welcome to day 23. Cut grass to earn $ 200", "Yes or No")
+        if ( day23 === "Yes"){
+        money += 200
+        alert("Now you have $" + money)
+        }if ( day23 === "No"){
+        alert("Sorry to see you go, You have" + money)
+      }
+    let day24= prompt("Welcome to day 24. Cut grass to earn $ 200", "Yes or No")
+        if ( day24 === "Yes"){
+        money += 200
+        alert("Now you have $" + money)
+        }if ( day24 === "No"){
+        alert("Sorry to see you go, You have" + money)
+        }
+    let day25= prompt("Welcome to day 20. Cut grass to earn $ 200", "Yes or No")
+        if ( day25 === "Yes"){
+        money += 200
+        alert("Now you have $" + money)
+        }if ( day25 === "No"){
+        alert("Sorry to see you go, You have" + money)
+        }
+
+      return 
+ } 
+ earnMoneyWithTeam()
