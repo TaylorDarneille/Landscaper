@@ -1,6 +1,7 @@
 let money = 0
 let scissors=0
-let lawnmower=0
+let pushLawnmower=0
+let batteryLawnmower= 0
 const start =()=>{
 
     let haveTeeth = prompt("Do you have teeth", "Yes or No")
@@ -134,21 +135,21 @@ const earnMoneyWithTeeth =()=>{
 
      earnMoneyWithScissors ()
 
-     const buyLawnmower = ()=>{
-        let buyTool2= prompt("Welcome to day 11! You now have $" + money + "Would you like to buy a lawnmower?", "Yes or No")
+     const buyPushLawnmower = ()=>{
+        let buyTool2= prompt("Welcome to day 11! You now have $" + money + "Would you like to buy a push lawnmower?", "Yes or No")
            if(buyTool2 === "Yes"){
                money -= 25
-               lawnmower ++
-               alert ("You now have $" + money + " money and " + lawnmower +" lawnmower")
+               pushLawnmower ++
+               alert ("You now have $" + money + " money and " + pushLawnmower +" push lawnmower")
            }
            if(buyTool2 === "No"){
                alert("You will keep earning money with scissors. Are you sure?")
            }
            return
         }
-   buyLawnmower()
+   buyPushLawnmower()
 
-   const earnMoneyWithLawnmower = ()=>{
+   const earnMoneyWithPushLawnmower = ()=>{
 
     let day11= prompt("Welcome to day 11 . Cut grass to earn $ 50", "Yes or No")
         if ( day11 === "Yes"){
@@ -192,4 +193,18 @@ const earnMoneyWithTeeth =()=>{
       return 
  } 
 
- earnMoneyWithLawnmower ()
+ earnMoneyWithPushLawnmower ()
+
+ const buyBatteryLawnmower = ()=>{
+    let buyTool3= prompt("Welcome to day 16! You now have $" + money + "Would you like to buy a battery powered lawnmower?", "Yes or No")
+       if(buyTool3 === "Yes"){
+           money -= 250
+           batteryLawnmower ++
+           alert ("You now have $" + money + " money and " + batteryLawnmower +" push lawnmower")
+       }
+       if(buyTool3 === "No"){
+           alert("You will keep earning money with a push lawnmower. Are you sure?")
+       }
+       return
+    }
+buyBatteryLawnmower()
