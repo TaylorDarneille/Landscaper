@@ -53,6 +53,9 @@ const bank = () => {
     if(implement === tools[3]) {
         money += 100
     }
+    if(implement === tools[4]) {
+        money += 250
+    }
     toolTree()
     //decision()
 }
