@@ -5,16 +5,27 @@
 //!!FUNCTIONS GO HERE
     //all functions that are nested must be written ABOVE where it is called
 
- //a function that alerts user how much money they have, made so that it can be called within several different functions 
  let howMuch= () => {
      alert('You now have $'+ money);
  }
+
+let buyFancyMower= () => {
+    let fancyMower= prompt('You can now afford a fancy battery-powered lawnmower for $250, do you want to buy?', 'Yes/No');
+    if(fancyMower=== 'Yes' || fancyMower=== 'yes'){
+        money-=250;
+        howMuch();
+    }
+}
+
 
 let cutWithOldMower= () => {
     let cutOldMower= prompt('Do you want to cut the lawn with the old push lawn mower to earn $50?', 'Yes/No');
     if(cutOldMower=== 'Yes' || cutOldMower=== 'yes'){
         money+=50;
         howMuch();
+    }
+    if(money>= 250){
+        buyFancyMower();
     }
 }
 
@@ -30,6 +41,18 @@ let cutWithOldMower= () => {
     }
 }
 
+/*----------------------------TRIAL----------------------------------- 
+//using only a while statement, rather than the if and then while, doesnt work because it runs cutWithOldMover only once and then loops through this while statement again, subtracting money without a cause
+let buyOldMower= ()=> {
+    let oldMower= prompt('You can now afford an old push lawnmower for $25, do you want to buy?', 'Yes/No');
+    while(oldMower=== 'Yes'|| oldMower=== 'yes'){
+        money= money-25;
+        howMuch();
+        cutWithOldMower();
+    }
+}
+----------------------------TRIAL----------------------------------- */
+
  let cutWithSci= () => {
     let cutSci= prompt('Do you want to cut the lawn with the rusty scissors to earn $5?', 'Yes/No');
     //using while(money< 25) to get the function to stop running and move onto the if statement down below in the non function code, it stopped but didnt move on, idk why
@@ -37,9 +60,10 @@ let cutWithOldMower= () => {
         money= money + 5;
         howMuch();
     }
-    //this if statement needs to be here to work and call on buyOldMover function, when this if statement was put in the code below it did not stop this function (cutWithSci) to stop running
+    //this if statement needs to be here to work and call on buyOldMover function, when this if statement was put in the code below it did not stop the beginning of this function (cutWithSci) to stop running
     if(money>=25){
         buyOldMower();
+    //?????? is it possible to have a forcequit of a function so that it moves down to the next step in the body of code below?
     }
 }
 
@@ -73,7 +97,7 @@ while(askCut !== 'cancel'){
             buyScissors();
         }
         //does not move onto to next if statement until the nested function is done running...
-        if(money>= 25){
+        if(money>= 25){ //this if statement only affects code if you are answering cutLawn prompt, not any of the other prompts from other functions, aka.if you buy scissors, this if statement does not affect flow of code
             buyOldMower();
         }
     }else if(cutLawn=== 'No' || cutLawn=== 'no'){
@@ -82,3 +106,5 @@ while(askCut !== 'cancel'){
 }
 
 
+//Question: when you have a nested function, and the nested function has a while or if within it, does it not move on in the body of code until the function is done running? 
+//why 
