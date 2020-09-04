@@ -14,11 +14,13 @@
  }
 
 let cutWithStudentWorkers= () => {
-    let cutStudentWorkers= prompt('Do you want to cut lawns with your hired team of students to earn $250?', 'Yes/No');
-    if(cutStudentWorkers=== 'Yes' || cutStudentWorkers=== 'yes'){
-        money+=250;
-        howMuch();
-    }
+    if(money<1000){ //this if statements stops the prompt of cutting lawns with students from coming up once the user has won
+        let cutStudentWorkers= prompt('Do you want to cut lawns with your hired team of students to earn $250?', 'Yes/No');
+        if(cutStudentWorkers=== 'Yes' || cutStudentWorkers=== 'yes'){
+            money+=250;
+            howMuch();
+        }
+    } 
     if(money>=1000){
         userWon();
     }
@@ -144,7 +146,7 @@ while(askCut !== 'cancel'){
         }
     }else if(cutLawn=== 'No' || cutLawn=== 'no'){
         alert('You can\'t make money if you don\'t cut lawns');
-    }    
+    } 
 }
 
 
