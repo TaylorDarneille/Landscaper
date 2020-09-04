@@ -1,16 +1,48 @@
 /*use a grid*/
 
 
-body {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-
+#body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "top top top top top top"
+                         ". bank . . . ."
+                         ". title title title title ."
+                         ". title title title title ."
+                         "b1 b2 b3 b4 b5 b6"
+                         ". . . . . .";            
+    row-gap: 30px;    
+    column-gap: 30px;        
 }
 
-button {
-    width: 25vw;
-    height: 25vh;
-    color: red;
-    margin-top: 20vh;
+#title {
+    grid-area: title;
+    color: green;
+    text-align: center;
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+}
+#landscaper {
+    opacity: 0;
+}
+#startButton {
+    background: none;
+    font-size:36px;
+    min-width: 100%;
+    border: none;
+    margin: auto;
+    outline:none;
+}
+#startButton:hover {
+    font-size: 44px;
+}
+#bank {
+    grid-area: bank;
+}
+#button1 {
+    grid-area: b1;
 }
