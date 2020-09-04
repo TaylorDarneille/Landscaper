@@ -1,5 +1,5 @@
-console.log("test 1")
-console.log("test 2")
+//console.log("test 1")
+//console.log("test 2")
 //alert("Welcome to the game!")
 
 //Use start function to set starting point for game
@@ -9,20 +9,22 @@ console.log("test 2")
 //const cutGrass = prompt("Would you like to cut grass today? You can only use your teeth, but you'll earn a dollar.", "Yes / No")
 
 let money
-let tools = ["teeth", "rusty scissors"]
+let tools = ["teeth", "rusty scissors", "push mower", "battery-powered mower", "team of starving students"]
+let implement = tools[0]
 
 const start = () => {
     money = 0
-    implement = tools[0]
-    decision()
+    //decision()
+    showStatus()
 }
 
 const showStatus = () => {
     alert("You have $" + money + ". Your tool is " + implement +".")
+    decision()
 }
 
 const decision = () => {
-    showStatus()
+    //showStatus()
     
     const choice = prompt("Do you want to cut grass?", "Yes / No / Restart")
 
@@ -38,32 +40,48 @@ const decision = () => {
 
 const bank = () => {
     //invoke function to add money. should be called if decision = yes
-    money += 1
+    //money += 1
+    if(implement === tools[0]) {
+        money +=1
+    }
+    if(implement === tools[1]) {
+        money += 5
+    }
     toolTree()
-    decision()
+    //decision()
 }
 
 const rest = () => {
     alert("You're taking the day off!")
     decision()
-    //use a timeout function here?
+    
 }
 
 const toolTree = () => {
     //prompt similar to choice
     //if yes, change implement and deduct 5
     //if no, no action
-    if(money >= 5) {
-        showStatus()
-        const option = prompt("You have $5. Do you want to buy rusty scissors? The cost is $5", "Yes / No")
-        if(option === "Yes" && implement != tools[0]) {
-            money -=5
-            implement = tools[1]
-            decision()
-        } else {
-            decision()
-        }    
+
+    if(money < 5 && implement !== tools[1]) {
+        implement = tools[0]
     }
+
+    if(money >= 5 && implement === tools[0]) {
+        const option = prompt("You have $5. Do you want to buy rusty scissors? The cost is $5", "Yes / No")
+        if(option === "Yes") {
+            money -= 5
+            implement = tools[1]
+        }
+        
+    }
+    showStatus()
+    //decision()
 }
 
+/*
+const upgradeToScissors = () => {
+    money -= 5
+    implement === tools[1]
+}
+*/
 start()
