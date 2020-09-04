@@ -22,7 +22,7 @@ const showStatus = () => {
 const askForAction= () => {
     checkWinner();
     showStatus();
-    if (money === 5 || money === 25){
+    if (money === 5 || money >= 25 || money >= 250){
         storeTools();
     }
     // if (money === 5 && tool !== "rustyScissors"){
@@ -48,6 +48,8 @@ const storeTools = () => {
         askForScissors();
     } else if(money === 25 && tool !== "oldMower"){
         askForOldMower();
+    }else if (money >= 250  && tool !== "newMower"){
+        askForNewMower();
     }
 }
 
@@ -108,8 +110,18 @@ const askForOldMower = () => {
     };
 }
 
+const askForNewMower = () => {
+    const wantNewMower = prompt ("Do you want to buy a fancy battery-powered lawnmower for $250?", "Yes/No");
+    if (wantNewMower === "Yes") {
+        money -= 250;
+        tool = "newMower";
+        showStatus();
+    } else if (wantOldMower === "No") {
+        askForAction();
+    }
+}
 const checkWinner = () => {
-    if (money === 500){
+    if (money === 1000){
         alert("You are a winner! Great job!");
     }
 }
