@@ -302,10 +302,10 @@ const earnMoneyWithBatteryLawnmower = ()=>{
         }if ( day24 === "No"){
         alert("Sorry to see you go, You have" + money)
         }
-    let day25= prompt("Welcome to day 20. Cut grass to earn $ 200", "Yes or No")
+    let day25= prompt("Welcome to day 25. Cut grass to earn $ 200", "Yes or No")
         if ( day25 === "Yes"){
         money += 200
-        alert("Now you have $" + money)
+        alert("Congratulations!! You have won. You have a team of starving students and $" + money)
         }if ( day25 === "No"){
         alert("Sorry to see you go, You have" + money)
         }
