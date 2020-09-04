@@ -9,11 +9,23 @@
     alert('You now have $'+ money);
  }
 
+let buyStudentWorkers= () => {
+    let studentWorkers= prompt('You can now afford to pay some starving student workers to help you mow lawns, do you want to pay them $500?', 'Yes/No');
+    if(studentWorkers=== 'Yes' || studentWorkers=== 'yes'){
+        money-=500;
+        howMuch();
+    }
+}
+
+
 let cutWithFancyMower= () => {
     let cutFancyMower= prompt('Do you want to cut the lawn with the fancy new battery-powered lawnmover to earn $100?', 'Yes/No');
     if(cutFancyMower=== 'Yes' || cutFancyMower=== 'yes'){
         money+=100;
         howMuch();
+    }
+    if(money>= 500){
+        buyStudentWorkers();
     }
 }
 
