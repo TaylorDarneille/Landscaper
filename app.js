@@ -5,10 +5,21 @@ let money;
 let store = //array of objects with name, profit, and cost key:value pairs 
     [
     { name: "Rusty Scissors",
-      profit: 1
+      profit: 5,
+      cost: 5
     },
-
-    }
+    { name: "Push Mower",
+      profit: 50,
+      cost: 25
+    },
+    { name: "Battery-powered Mower",
+    profit: 100,
+    cost: 250
+    },
+    { name: "Team of Students",
+    profit: 250,
+    cost: 500
+    } 
     ]
 
 const start = () => {
@@ -25,7 +36,9 @@ const askForAction = () => {
 
     if (choice === "work") {
         work()
-    } 
+    } else if (choice === "shop") {
+        shop()
+    }
 }
 
 const work = () => {
@@ -33,5 +46,9 @@ const work = () => {
     askForAction()
 }
 
+const shop = () => {
+    // prompt with store array values 
+    //conditional for selecting each item in the store
+}
 
 start()
