@@ -81,7 +81,7 @@ const toolTree = () => {
         
     }
 
-    if(money >= 25 && implement === tools[0] || money >= 25 && implement === tools[1]) {
+    if(/*money >= 25 && implement === tools[0] ||*/ money >= 25 && implement === tools[1]) {
         const option = prompt("You have $25. Do you want to upgrade to a push-mower?"," Yes / No")
         if(option === "Yes") {
             money -= 25
@@ -89,11 +89,19 @@ const toolTree = () => {
         }
     }
 
-    if(money >= 250 && implement === tools[0] || money >= 250 && implement === tools[1] || money >= 250 && implement === tools[2]) {
+    if(/*money >= 250 && implement === tools[0] || money >= 250 && implement === tools[1] ||*/ money >= 250 && implement === tools[2]) {
         const option = prompt("You have $250. Do you want to upgrade to a battery-powered mower?", "Yes / No")
         if(option === "Yes") {
             money -= 250
             implement = tools[3]
+        }
+    }
+
+    if(money >= 500 && implement === tools[3]) {
+        const option = prompt("You have $500. Do you want to hire a team of starving students for $500?", "Yes / No")
+        if(option === "Yes") {
+            money -= 500
+            implement = tools[4]
         }
     }
     showStatus()
