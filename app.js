@@ -6,8 +6,18 @@
     //all functions that are nested must be written ABOVE where it is called
 
  let howMuch= () => {
-     alert('You now have $'+ money);
+    alert('You now have $'+ money);
  }
+
+let cutWithFancyMower= () => {
+    let cutFancyMower= prompt('Do you want to cut the lawn with the fancy new battery-powered lawnmover to earn $100?', 'Yes/No');
+    if(cutFancyMower=== 'Yes' || cutFancyMower=== 'yes'){
+        money+=100;
+        howMuch();
+    }
+}
+
+
 
 let buyFancyMower= () => {
     let fancyMower= prompt('You can now afford a fancy battery-powered lawnmower for $250, do you want to buy?', 'Yes/No');
@@ -15,11 +25,14 @@ let buyFancyMower= () => {
         money-=250;
         howMuch();
     }
+    while(fancyMower=== 'Yes' || fancyMower=== 'yes'){
+        cutWithFancyMower();
+    }
 }
 
 
 let cutWithOldMower= () => {
-    let cutOldMower= prompt('Do you want to cut the lawn with the old push lawn mower to earn $50?', 'Yes/No');
+    let cutOldMower= prompt('Do you want to cut the lawn with the old push lawnmower to earn $50?', 'Yes/No');
     if(cutOldMower=== 'Yes' || cutOldMower=== 'yes'){
         money+=50;
         howMuch();
@@ -84,7 +97,6 @@ let buyOldMower= ()=> {
 
 
 //BEGINNING: what runs first on homepage
-// prompt('Do you want to cut lawns?', 'Yes/No');
 let askCut= null;
 while(askCut !== 'cancel'){
     let cutLawn= prompt('Do you want to cut lawns with your teeth to earn $1?', 'Yes/No');
