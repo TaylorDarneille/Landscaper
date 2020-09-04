@@ -2,6 +2,7 @@ let money = 0
 let scissors=0
 let pushLawnmower=0
 let batteryLawnmower= 0
+let team = 0
 const start =()=>{
 
     let haveTeeth = prompt("Do you have teeth", "Yes or No")
@@ -208,3 +209,62 @@ const earnMoneyWithTeeth =()=>{
        return
     }
 buyBatteryLawnmower()
+
+const earnMoneyWithBatteryLawnmower = ()=>{
+
+    let day16= prompt("Welcome to day 16 . Cut grass to earn $ 100", "Yes or No")
+        if ( day16 === "Yes"){
+    money += 100
+    alert("Now you have $ " + money)
+        }if ( day16 === "No"){
+    alert("Sorry to see you go, You have" + money)
+
+        }
+    let day17= prompt("Welcome to day 17. Cut grass to earn $ 100", "Yes or No")
+        if ( day17 === "Yes"){
+        money += 100
+        alert("Now you have $" + money)
+        }if ( day17 === "No"){
+        alert("Sorry to see you go, You have" + money)
+
+        }
+    
+    let day18= prompt("Welcome to day 18. Cut grass to earn $ 100", "Yes or No")
+        if ( day18 === "Yes"){
+        money += 100
+        alert("Now you have $" + money)
+        }if ( day18 === "No"){
+        alert("Sorry to see you go, You have" + money)
+      }
+    let day19= prompt("Welcome to day 14. Cut grass to earn $ 100", "Yes or No")
+        if ( day19 === "Yes"){
+        money += 100
+        alert("Now you have $" + money)
+        }if ( day19 === "No"){
+        alert("Sorry to see you go, You have" + money)
+        }
+    let day20= prompt("Welcome to day 20. Cut grass to earn $ 100", "Yes or No")
+        if ( day20 === "Yes"){
+        money += 100
+        alert("Now you have $" + money)
+        }if ( day20 === "No"){
+        alert("Sorry to see you go, You have" + money)
+        }
+
+      return 
+ } 
+ earnMoneyWithBatteryLawnmower()
+
+ const hireTeam = ()=>{
+    let buyTool4= prompt("Welcome to day 21! You now have $" + money + "Would you like to hire a team to cut grass?", "Yes or No")
+    if(buyTool4 === "Yes"){
+        money -= 500
+        team ++
+        alert ("You now have $" + money + " money and " + team +" team of starving college students")
+    }
+    if(buyTool4 === "No"){
+        alert("You will keep earning money with a battery powered lawnmower. Are you sure?")
+    }
+    return
+ }
+ hireTeam()
