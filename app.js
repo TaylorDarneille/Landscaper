@@ -147,3 +147,49 @@ const earnMoneyWithTeeth =()=>{
            return
         }
    buyLawnmower()
+
+   const earnMoneyWithLawnmower = ()=>{
+
+    let day11= prompt("Welcome to day 11 . Cut grass to earn $ 50", "Yes or No")
+        if ( day11 === "Yes"){
+    money += 50
+    alert("Now you have $ " + money)
+        }if ( day11 === "No"){
+    alert("Sorry to see you go, You have" + money)
+
+        }
+    let day12= prompt("Welcome to day 12. Cut grass to earn $ 50", "Yes or No")
+        if ( day12 === "Yes"){
+        money += 50
+        alert("Now you have $" + money)
+        }if ( day12 === "No"){
+        alert("Sorry to see you go, You have" + money)
+
+        }
+    
+    let day13= prompt("Welcome to day 13. Cut grass to earn $ 50", "Yes or No")
+        if ( day13 === "Yes"){
+        money += 50
+        alert("Now you have $" + money)
+        }if ( day13 === "No"){
+        alert("Sorry to see you go, You have" + money)
+      }
+    let day14= prompt("Welcome to day 14. Cut grass to earn $ 50", "Yes or No")
+        if ( day14 === "Yes"){
+        money += 50
+        alert("Now you have $" + money)
+        }if ( day14 === "No"){
+        alert("Sorry to see you go, You have" + money)
+        }
+    let day15= prompt("Welcome to day 15. Cut grass to earn $ 50", "Yes or No")
+        if ( day15 === "Yes"){
+        money += 50
+        alert("Now you have $" + money)
+        }if ( day15 === "No"){
+        alert("Sorry to see you go, You have" + money)
+        }
+
+      return 
+ } 
+
+ earnMoneyWithLawnmower ()
