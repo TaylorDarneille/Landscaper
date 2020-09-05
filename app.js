@@ -22,7 +22,7 @@ const showStatus = () => {
 const askForAction= () => {
     checkWinner();
     showStatus();
-    if (money === 5 || money >= 25 || money >= 250){
+    if (money === 5 || money >= 25 || money >= 250 || money >= 500){
         storeTools();
     }
     // if (money === 5 && tool !== "rustyScissors"){
@@ -48,8 +48,10 @@ const storeTools = () => {
         askForScissors();
     } else if(money === 25 && tool !== "oldMower"){
         askForOldMower();
-    }else if (money >= 250  && tool !== "newMower"){
+    } else if (money >= 250  && tool !== "newMower"){
         askForNewMower();
+    } else if (money >= 500 && tool !== "starvingStudent"){
+        askForStudent();
     }
 }
 
@@ -61,6 +63,8 @@ const cutLawns = () => {
         cutWithScissors();
     }else if (tool === "oldMower"){
         cutWithOldMower();
+    }else if (tool === "newMower"){
+        cutWithNewMower();
     }
 };
 //adds lawn cut an $1
@@ -84,6 +88,13 @@ const cutWithScissors = () => {
 const cutWithOldMower = () => {
     lawnsCut++;
     money+= 50;
+    askForAction();
+};
+
+//make the mower add $100 per lawn cut
+const cutWithNewMower = () => {
+    lawnsCut++;
+    money+= 100;
     askForAction();
 }
 
@@ -117,6 +128,17 @@ const askForNewMower = () => {
         tool = "newMower";
         showStatus();
     } else if (wantOldMower === "No") {
+        askForAction();
+    }
+}
+
+const askForStudent = () => {
+    const wantStarvingStudent = prompt ("Do you want to hire some starving students for $500?", "Yes/No");
+    if (wantStarvingStudent === "Yes") {
+        money -= 500;
+        tool = "starvingStudent";
+        showStatus();
+    }else if (wantStarvingStudent === "No") {
         askForAction();
     }
 }
