@@ -7,9 +7,7 @@
 //     alert("No pay!")
 // }
 let wallet = 0
-const buyTools = () => {
-  
-}
+
 const earnMoney = () => {
     const userInput = prompt("How did you cut the grass today?");
     console.log(userInput)
@@ -31,6 +29,19 @@ const earnMoney = () => {
     }
 };
 earnMoney()
+
+const buyTools = () => {
+  if(wallet >= 5){
+    alert("You can buy rusty scissors")
+  }else if(wallet >= 25){
+    alert("You can buy old lawnmower")
+  }else if(wallet >= 250){
+    alert("You can buy fancy lawnmower")
+  }else if(wallet >= 500){
+    alert("You can buy starving students")
+  }
+}
+buyTools()
 
 // const Lowes = () => {
 //     const buyingTools = prompt(
@@ -57,9 +68,6 @@ earnMoney()
 //     mowLawnToday()
 //   };
   
-
-
-
-  if(userInput === "starving students" && wallet === 1000){
+if(userInput === "starving students" && wallet === 1000){
       alert("Lanscaper wins!")
   }
