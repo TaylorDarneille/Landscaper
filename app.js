@@ -2,7 +2,8 @@
 const TOOLS = {
   teeth: {name: "teeth", cost: 0, revenue:1, has: true },
   scissors: {name: "scissors", cost: 5, revenue: 5, has: false},
-  pushmower: {name: "pushmower", cost: 25, revenue: 50, has: false}
+  pushmower: {name: "pushmower", cost: 25, revenue: 50, has: false},
+  lawnmower: {name: "lawnmower", cost: 250, revenue: 100, has: false},
   }
 
 //set active tool to be teeth
