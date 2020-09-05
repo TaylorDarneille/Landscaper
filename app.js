@@ -2,7 +2,7 @@
 const TOOLS = {
   teeth: {name: "teeth", cost: 0, revenue:1, has: true },
   scissors: {name: "scissors", cost: 5, revenue: 5, has: false},
-  pushmower: {name: "push mower", cost: 25, revenue: 50, has: false}
+  pushmower: {name: "pushmower", cost: 25, revenue: 50, has: false}
   }
 
 //set active tool to be teeth
@@ -36,7 +36,7 @@ const askForAction = () => {
 }
 
 const buyTool = () =>{
-  const toolToBuy = prompt(`Which tool would you like to buy?`,`scissors/pushmower`);
+  const toolToBuy = prompt(`Which tool would you like to buy?`,`scissors / pushmower`);
   if(!TOOLS[toolToBuy]){
     alert(`Not a valid entry`);
     }
