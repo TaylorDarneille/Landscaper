@@ -22,6 +22,7 @@ let store = //array of objects with name, profit, and cost key:value pairs
     } 
     ]
 
+
 const start = () => {
     money = 0;
     tool = {
@@ -47,8 +48,9 @@ const work = () => {
 }
 
 const shop = () => {
-    // prompt with store array values 
-    //conditional for selecting each item in the store
+    // prompt with store array values
+    const inventory = prompt("Welcome to the store! What did you have in mind? \n" + store[0].name + ": $" +  store[0].cost + "\n" + store[1].name + ": $" + store[1].cost + "\n" + store[2].name + ": $" + store[2].cost + "\n" + store[3].name + ": $" + store[3].cost, "type the item you want" ) 
+    //conditional for selecting each item in the store, executes function for purchase of that item
 }
 
 start()
