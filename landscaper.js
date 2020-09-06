@@ -11,6 +11,7 @@ let wallet = 0
 const earnMoney = () => {
   let userInput = prompt("How did you cut the grass today?");
   while(userInput === "teeth"){
+    //earn $1 per time user inputs teeth
     wallet += 1;
     alert("You earned $1", "You now have "+ wallet)
     userInput = prompt("How did you cut the grass today?")
@@ -18,6 +19,7 @@ const earnMoney = () => {
       prompt("You can buy rusty scissors!", "Yes or no?")
     }if(userInput === "yes"){
         wallet -= 5;
+        //the alert is not popping up
         alert("You have bought rusty scissors");
         userInput = prompt("How did you cut the grass today?")
       }else(
@@ -25,6 +27,7 @@ const earnMoney = () => {
       )
   }
   while(userInput === "rusty scissors"){
+    //earn $5 per time user inputs rusty scissors
     wallet += 5;
     alert("You earned $5", "You now have "+ wallet)
     userInput = prompt("How did you cut the grass today?")
