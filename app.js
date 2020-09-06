@@ -52,3 +52,14 @@ const continueAfterScissors = () => {
 
 let continueScissors = document.querySelector('.continueAfterScissors');
 continueScissors.addEventListener('click', continueAfterScissors);
+//Next, add a buy lawnmower button to complete step 5
+
+const runLawnmower = () => {
+    alert('You have purchased a lawnmower. You now have $' + money)
+    money -= 25;
+    document.querySelector('.money').innerHTML = money;
+}
+
+
+let buyLawnmower = document.querySelector('.lawnmower');
+buyLawnmower.addEventListener('click', runLawnmower);
