@@ -161,15 +161,33 @@ function earnMoneyWithBatteryLawnmower (){
 }
 earnMoneyWithBatteryLawnmower ()
 
-function buyBatteryLawnMower (){
-    alert("You have bought a battery powered lawnmower for $ 250")
-    money-=250
-    let useBatt= prompt("You now have a battery powered lawnmower. Would you like to use it?","Yes or No")
-        if(useBatt === "Yes"){
-            earnMoneyWithBatteryLawnmower()
+function buyTeam (){
+    alert("You have bought a team of starving students for $ 500")
+    money-=500
+    let useTeam= prompt("You now have a team of starving students. Would you like to use it?","Yes or No")
+        if(useteam === "Yes"){
+            earnMoneyWithTeam()
 
-    }else if (useBatt=== "No"){
-        earnMoneyWithPushLawnmower()
+    }else if (useTeam=== "No"){
+        earnMoneyWithBatteryLawnmower()
     }
 }
-buyBatteryLawnMower ()
+buyTeam ()
+
+// function earnMoneyWithTeam (){
+
+//     while(money < 1000){
+//         let team= prompt("Cut grass with team of starving students to earn $500", "Yes or No")
+//     if ( team === "Yes"){
+//         money +=500
+//         days ++
+//         alert("Now you have $" + money + ". It's day " + days)
+//     }else if (Team === "No"){
+//         alert("Sorry to see you go today, come back tomorrow when you're ready to work. You have $" + money + " It's day  " + days)
+//          days ++ 
+//     }
+
+// //     while( money >=1000)
+// //     alert( "congratulations!! You have earned $1,000 and have a team of starving students )
+// // }
+// earnMoneyWithTeam ()
