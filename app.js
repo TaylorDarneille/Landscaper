@@ -45,11 +45,23 @@ start()
    }
 
 earnMoneyWithTeeth()
+
+function buyScissors (){
+    alert("You have bought scissors for $ 5 ")
+    money-=5
+    let useScissors= prompt("You now have scissors. Would you like to use them?","Yes or No")
+        if(useScissors === "Yes"){
+            earnMoneyWithScissors()
+
+    }else if (useScissors === "No"){
+        earnMoneyWithTeeth()
+    }
+}
+buyScissors ()
         
         
 function earnMoneyWithScissors (){
 
-    
     while(money < 25){
         let scissor= prompt("Cut grass with scissors to earn $ 5", "Yes or No")
     if ( scissor === "Yes"){
@@ -61,27 +73,52 @@ function earnMoneyWithScissors (){
          days ++ 
     }
 }
-    while( money > 25){
-    let mower = prompt("You now have $" + money + ".Would you like to buy a push lawnmower?", "Yes or No")
-    if(mower==="Yes"){
+    while( money >=25){
+    let check2 = prompt("You now have $" + money + ".Would you like to buy a push lawnmower?", "Yes or No")
+    if(check2==="Yes"){
        buyPushLawnMower()
-    }else if(mower ==="No"){
-        earnMoneyWithScissors()
+    }else if(check2 ==="No"){
+        // earnMoneyWithScissors()
     }
 }  
     
 }
 earnMoneyWithScissors()
 
-function buyScissors (){
-    alert("You have bought scissors for $ 5")
-    money-=5
-    let useScissors= prompt("You now have scissors. Would you like to use them?","Yes or No")
-        if(useScissors === "Yes"){
-            earnMoneyWithScissors()
+function buyPushLawnMower (){
+    alert("You have bought a push lawnmower for $ 25")
+    money-=25
+    let usePush= prompt("You now have a push lawnmower. Would you like to use it?","Yes or No")
+        if(usePush === "Yes"){
+            earnMoneyWithPushLawnmower()
 
-    }else if (useScissors === "No"){
-        earnMoneyWithTeeth()
+    }else if (usePush=== "No"){
+        earnMoneyWithScissors()
     }
 }
-buyScissors ()
+buyPushLawnMower ()
+
+function earnMoneyWithPushLawnmower (){
+
+    while(money < 250){
+        let push= prompt("Cut grass with push lawnmower to earn $ 50", "Yes or No")
+    if ( push === "Yes"){
+        money +=50
+        days ++
+        alert("Now you have $" + money + ". It's day " + days)
+    }else if (push === "No"){
+        alert("Sorry to see you go today, come back tomorrow when you're ready to work. You have $" + money + " It's day  " + days)
+         days ++ 
+    }
+}
+    while( money >=250){
+    let check3 = prompt("You now have $" + money + ".Would you like to buy a battery powered lawnmower?", "Yes or No")
+    if(check3==="Yes"){
+       buyBatteryLawnMower()
+    }else if(check3 ==="No"){
+        earnMoneyWithPushLawnmower()
+    }
+}  
+    
+}
+earnMoneyWithPushLawnmower()
