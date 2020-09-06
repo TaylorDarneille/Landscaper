@@ -31,4 +31,24 @@ const buyScissors = () => {
 let rustyScissorsButton = document.querySelector('.rustyScissors');
 rustyScissorsButton.addEventListener('click', buyScissors);
 
-//continues the game after buying the pair of rusty scissors 
+//continue the game after buying the pair of rusty scissors. create button that when clicked sends prompt to user asking which
+//tool to use
+const continueAfterScissors = () => {
+    while (money < 25) {
+    secondPrompt = prompt('Continue the Game. Which tool would you like to use? Remember, you have $' + money + ' Teeth earn $1. Scissors earn $5.', 'teeth/scissors');
+    if (secondPrompt === 'teeth') {
+        alert('you chose teeth')
+        money++;
+        document.querySelector('.money').innerHTML = money;
+    } else if (secondPrompt === 'scissors') {
+        alert('you chose scissors')
+        money += 5;
+        document.querySelector('.money').innerHTML = money;
+    } else {
+        console.log('you need more money');
+    }
+}
+};
+
+let continueScissors = document.querySelector('.continueAfterScissors');
+continueScissors.addEventListener('click', continueAfterScissors);
