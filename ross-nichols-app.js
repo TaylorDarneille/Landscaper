@@ -1,41 +1,41 @@
-//console.log("test 1")
-//console.log("test 2")
-//alert("Welcome to the game!")
+alert("Welcome to the game! You win by earning $1000 and hiring a team of starving students")
 
 //Use start function to set starting point for game
-//Use function to determine prompt given at start of round?
+//Use function to determine prompt given at start of round
 //Ask: would you like to cut grass today? You can only use your teeth, but you'll earn a dollar. Earn enough money and you can buy tools! Answer yes/no
-//Conditional: if yes, person += 1 / if no, don't add money (need to account for no answer)
+//Conditional: if yes, money += 1 / if no, don't add money (need to account for no answer)
 //const cutGrass = prompt("Would you like to cut grass today? You can only use your teeth, but you'll earn a dollar.", "Yes / No")
 
 let money
-let tools = ["teeth", "rusty scissors", "push mower", "battery-powered mower", "team of starving students"]
+const tools = ["teeth", "rusty scissors", "push mower", "battery-powered mower", "a team of starving students"]
 let implement = tools[0]
 
 const start = () => {
     money = 0
-    //decision()
     showStatus()
 }
 
 const showStatus = () => {
-    alert("You have $" + money + ". Your tool is " + implement +".")
-    decision()
+    if(money >= 1000 && implement === tools[4]) {
+        alert("Congratulations! You have won the game! You have $" + money + " and you hired " + implement)
+    } else {
+        alert("You have $" + money + ". Your tool is " + implement +".")
+        decision()
+    }
 }
 
 const decision = () => {
-    //showStatus()
-    
     const choice = prompt("Do you want to cut grass?", "Yes / No / Restart")
 
-    if(choice === "Yes") {
+    if(choice.toLowerCase() === "yes") {
         bank()
-    } else if(choice === "No") {
+    } else if(choice.toLowerCase() === "no") {
         rest()
-    } else if(choice === "Restart") {
+    } else if(choice.toLowerCase() === "restart") {
         start()
+    } else {
+        decision()
     }
-    
 }
 
 const bank = () => {
@@ -57,7 +57,6 @@ const bank = () => {
         money += 250
     }
     toolTree()
-    //decision()
 }
 
 const rest = () => {
@@ -67,54 +66,41 @@ const rest = () => {
 }
 
 const toolTree = () => {
-    //prompt similar to choice
-    //if yes, change implement and deduct 5
+    //if yes, change implement and deduct cost from money
     //if no, no action
 
     if(money < 5 && implement !== tools[1]) {
         implement = tools[0]
     }
-
     if(money >= 5 && implement === tools[0]) {
-        const option = prompt("You have $5. Do you want to buy rusty scissors? The cost is $5", "Yes / No")
-        if(option === "Yes") {
+        const option = prompt("You have $5. Do you want to buy rusty scissors? The cost is $5 and you will earn $5 per day.", "Yes / No")
+        if(option.toLowerCase() === "yes") {
             money -= 5
             implement = tools[1]
-        }
-        
+        } 
     }
-
-    if(/*money >= 25 && implement === tools[0] ||*/ money >= 25 && implement === tools[1]) {
-        const option = prompt("You have $25. Do you want to upgrade to a push-mower?"," Yes / No")
-        if(option === "Yes") {
+    if(money >= 25 && implement === tools[1]) {
+        const option = prompt("You have $25. Do you want to upgrade to a push-mower? The cost is $25 and you will earn $50 per day"," Yes / No")
+        if(option.toLowerCase() === "yes") {
             money -= 25
             implement = tools[2]
         }
     }
-
-    if(/*money >= 250 && implement === tools[0] || money >= 250 && implement === tools[1] ||*/ money >= 250 && implement === tools[2]) {
-        const option = prompt("You have $250. Do you want to upgrade to a battery-powered mower?", "Yes / No")
-        if(option === "Yes") {
+    if(money >= 250 && implement === tools[2]) {
+        const option = prompt("You have $250. Do you want to upgrade to a battery-powered mower? The cost is $250 and you will earn $100 per day", "Yes / No")
+        if(option.toLowerCase() === "yes") {
             money -= 250
             implement = tools[3]
         }
     }
-
     if(money >= 500 && implement === tools[3]) {
-        const option = prompt("You have $500. Do you want to hire a team of starving students for $500?", "Yes / No")
-        if(option === "Yes") {
+        const option = prompt("You have $500. Do you want to hire a team of starving students? The cost is $500 and you will earn $250 per day", "Yes / No")
+        if(option.toLowerCase() === "yes") {
             money -= 500
             implement = tools[4]
         }
     }
     showStatus()
-    //decision()
 }
 
-/*
-const upgradeToScissors = () => {
-    money -= 5
-    implement === tools[1]
-}
-*/
 start()
