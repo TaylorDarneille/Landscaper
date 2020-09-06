@@ -78,7 +78,7 @@ function earnMoneyWithScissors (){
     if(check2==="Yes"){
        buyPushLawnMower()
     }else if(check2 ==="No"){
-        // earnMoneyWithScissors()
+        earnMoneyWithScissors()
     }
 }  
     
@@ -122,3 +122,54 @@ function earnMoneyWithPushLawnmower (){
     
 }
 earnMoneyWithPushLawnmower()
+
+function buyBatteryLawnMower (){
+    alert("You have bought a battery powered lawnmower for $ 250")
+    money-=250
+    let useBatt= prompt("You now have a battery powered lawnmower. Would you like to use it?","Yes or No")
+        if(useBatt === "Yes"){
+            earnMoneyWithBatteryLawnmower()
+
+    }else if (useBatt=== "No"){
+        earnMoneyWithPushLawnmower()
+    }
+}
+buyBatteryLawnMower ()
+
+function earnMoneyWithBatteryLawnmower (){
+
+    while(money < 500){
+        let Batt= prompt("Cut grass battery powered lawnmower to earn $ 100", "Yes or No")
+    if ( Batt === "Yes"){
+        money +=100
+        days ++
+        alert("Now you have $" + money + ". It's day " + days)
+    }else if (Batt === "No"){
+        alert("Sorry to see you go today, come back tomorrow when you're ready to work. You have $" + money + " It's day  " + days)
+         days ++ 
+    }
+}
+    while( money >=500){
+    let check4 = prompt("You now have $" + money + ".Would you like to buy a team of starving students?", "Yes or No")
+    if(check4==="Yes"){
+       buyTeam()
+    }else if(check4==="No"){
+        earnMoneyWithBatteryLawnmower ()
+    }
+}  
+    
+}
+earnMoneyWithBatteryLawnmower ()
+
+function buyBatteryLawnMower (){
+    alert("You have bought a battery powered lawnmower for $ 250")
+    money-=250
+    let useBatt= prompt("You now have a battery powered lawnmower. Would you like to use it?","Yes or No")
+        if(useBatt === "Yes"){
+            earnMoneyWithBatteryLawnmower()
+
+    }else if (useBatt=== "No"){
+        earnMoneyWithPushLawnmower()
+    }
+}
+buyBatteryLawnMower ()
