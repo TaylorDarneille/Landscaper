@@ -55,12 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cutTeeth = () => {
     bankRoll++;
     updateBank();
-    if(bankRoll === 5 && counter === 0){
-      const butt2 = document.querySelector("#button2");
-      butt2.innerHTML = "<button>Click me to buy Scissors for $5</button>";
-      butt2.setAttribute("id", "button2");
-      counter ++;
-    }
+    checker();
   };
   teethButton.addEventListener("click", cutTeeth);
   //function for buying scissors and using, if bought once, cannout buy again
@@ -75,7 +70,43 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       bankRoll += 5;
       updateBank();
+      checker();
     }
   }
   buyUseSciss.addEventListener("click", buyUseScissors);
+
+  // let boughtScissors = false;
+  // const buyUseSciss = document.querySelector("#button2");
+  // const buyUseScissors = () => {
+  //   if(boughtScissors === false) {
+  //     boughtScissors = true;
+  //     bankRoll = bankRoll - 5;
+  //     updateBank();
+  //     document.querySelector("#button2").innerHTML = "<button>Cut grass with scissors to earn $5 a day</button> ";
+  //   } else {
+  //     bankRoll += 5;
+  //     updateBank();
+  //   }
+  // }
+  // buyUseSciss.addEventListener("click", buyUseScissors);
+
+  function checker () {
+    if (bankRoll >= 5 && counter === 0) {
+      const butt2 = document.querySelector("#button2");
+      butt2.innerHTML = "<button>Click me to buy Scissors for $5</button>";
+      counter ++;
+    } else if (bankRoll >=25 && counter === 1){
+      const butt3 = document.querySelector("#button3");
+      butt3.innerHTML = "<button>Click me to buy Mower for $25</button>";
+      counter ++;
+    } else if (bankRoll >=50 && counter === 2){
+
+    } else if (bankRoll >=250 && counter === 3){
+
+    } else if (bankRoll >=500 && counter === 4){
+
+    } else if (bankRoll >=25 && counter === 1){
+
+    }
+  }
 });
