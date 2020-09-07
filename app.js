@@ -32,6 +32,7 @@ const TOOLS = {
   }
 }
 
+// INITIALIZATION OF STATE 
 //set active tool to be teeth
 let tool = TOOLS.teeth;
 //initialize day number and money to be zero
@@ -42,7 +43,7 @@ let day = 0;
 // Function which prints current status of the game
 const showStatus = () => {
   console.log(tool)
-  alert(`It is day ${day}. You have ${tool.name} to mow, and $${money}.`)
+  alert(`It is day ${day}. You have ${tool.name} to cut grass, and $${money}.`)
 }
 
 
