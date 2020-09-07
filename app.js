@@ -1,5 +1,4 @@
 console.log("HELLO WORLD")
-
 let tool = {}
 let money;
 let store = //array of objects with name, profit, and cost key:value pairs 
@@ -33,12 +32,16 @@ const start = () => {
 };
 
 const askForAction = () => {
-    const choice = prompt("Current tool: " + tool.name + "\nYou have $" + money + "\nWhat do you want to do?", "Type in \'work\' or \'shop\'");
+    const choice = prompt("Current tool: " + tool.name + "\nYou have $" + money + "\nWhat do you want to do?", "Type in \'work\', \'shop\', or \'reset\'");
 
     if (choice === "work") {
         work()
     } else if (choice === "shop") {
         shop()
+    }else if (choice === "reset") {
+        start()
+    }else {
+        askForAction()
     }
 }
 
@@ -65,17 +68,22 @@ const shop = () => {
 }
 
 const buyScissors = () => {
+   if (tool === store[0]) {
+       alert("This item is sold out!");
+       shop()
+   }else {
     tool = store[0]
     console.log(tool)
     askForAction()
+   }
 }
 
 
-
-
-
-
-
-
-
 start()
+
+
+
+
+
+
+
