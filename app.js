@@ -7,25 +7,47 @@ const startGame = () => {
 }
 
 const showNoobStatus = () => {
-    alert("Welcome to the landscaping business! You have $" + money + " and no tools.")
+    alert("Welcome to the landscaping business!")
 }
 
 const teethStage = () => {
-    const choice = prompt('What would you like to do? \nCut lawns (earn $1)\nBuy a pair of rusty scissors (spend $5)\nType your choice:',
+    //while (tools.indexOf('scissors') < -1) {
+    const choice = prompt('You currently have $' + money + '. What would you like to do? \n- Cut lawns (earn $1)\n- Buy a pair of rusty scissors (spend $5)\nType your choice:',
     'cut lawns / buy scissors')
 
-    if (choice === "cut lawns") {
-        cutLawns()
-    } else if (choice === "buy pair of rusty scissors") {
-        buyScissors()
-    } else {
-        teethStage()
+        if (choice === "cut lawns") {
+            alert('You earned $1!')
+            money += 1
+            teethStage()
+        } else if (choice === "buy scissors" && money >= 5) {
+            alert('You purchased a pair of rusty scissors!')
+            money -= 5
+            scissors += 1
+            oldLawnmowerStage()
+        } else if (choice === "buy scissors" && money < 5) {
+            alert('You do not have enough money! Looks like you need to cut more lawns...')
+            teethStage()
+        } else (
+            teethStage()
+        )
     }
+//}
+
+// create an object with all the stage functions? then when game starts i can just call functions if it happens
+// store function in an array?
+
+const scissorsStage = () => {
+    const choice = prompt('What would you like to do? \nCut lawns (earn $5)\nBuy an old-timey push lawnmower (spend $25)\nType your choice:',
+    'cut lawns / buy lawnmower')
 }
-// currently cannot exit game
+
 
 const start = () => {
-    money = 20
+    money = 0
+    scissors = 0
+    oldLawnmower = 0
+    newLawnmower = 0
+    team = 0
 }
   
 start()
