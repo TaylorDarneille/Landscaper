@@ -24,6 +24,12 @@ const TOOLS = {
     revenue: 100,
     has: true
   },
+  team: {
+    name: "team",
+    cost: 500,
+    revenue: 250,
+    has: false
+  }
 }
 
 //set active tool to be teeth
@@ -59,7 +65,7 @@ const askForAction = () => {
 }
 
 const buyTool = () => {
-  const toolToBuy = prompt(printToolList(), `scissors / pushmower / lawnmower`);
+  const toolToBuy = prompt(printToolList(), `scissors / pushmower / lawnmower / team`);
   if (!TOOLS[toolToBuy]) {
     alert(`Not a valid entry`);
   }
