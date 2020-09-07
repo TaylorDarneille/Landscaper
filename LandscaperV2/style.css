@@ -105,7 +105,7 @@ button {
     color: whitesmoke;
 }
 
-button:hover {
+.store:hover {
     cursor: pointer;
     background: darkolivegreen;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -116,4 +116,16 @@ button:hover {
     cursor: pointer;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     color: white;
+  }
+
+  .disabled {
+    background: RGBA(85, 107, 47,0.5);
+    color:rgba(25, 25, 112,0.5);
+  }
+
+  .disabled:hover {
+    cursor: default;
+    background: rgba(85, 107, 47,0.5);;
+    box-shadow: none;
+    color:rgba(25, 25, 112,0.5);
   }

@@ -54,13 +54,17 @@ let inventory = [
 // }
 // }
 
+const storeButtons = document.querySelectorAll('.store')
+
 const shopping = (num) => {
     if (money >= (inventory[num].price)) {
         tools.unshift(inventory[num])
         toolDiv.innerText = `Tool: ${tools[0].name}`
         money -= inventory[num].price
         moneyDiv.innerText = `Money: $${money}`
-        mowLawn.innerText = `Mow a Lawn ($${tools[0].value})` 
+        mowLawn.innerText = `Mow a Lawn ($${tools[0].value})`
+        storeButtons[num].classList.add('disabled')      
+        storeButtons[num].disabled = true
     }
     else alert(`You don't have enough money! Mow some more lawns and come back later!`)
 }
