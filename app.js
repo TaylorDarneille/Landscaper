@@ -1,10 +1,15 @@
 console.log("HELLO WORLD")
 let tool = {}
-let money;
+let money
 let boughtScissors = false
 let boughtPushMower = false
 let boughtElecMower = false
 let boughtStudents = false
+const winner = () => {
+    if (boughtStudents === true && money >= 1000){
+   alert("You won the game! You are the best landscaper!")
+   }
+}
 
 let store = //array of objects with name, profit, and cost key:value pairs 
     [
@@ -37,11 +42,9 @@ const start = () => {
 };
 
 const askForAction = () => {
-    if (boughtStudents === true && money === 1000){
-        alert("You won the game! You are the best landscaper!")
-    }else {
+    winner()
     const choice = prompt("Current tool: " + tool.name + "\nYou have $" + money + "\nWhat do you want to do?", "Type in \'work\', \'shop\', or \'reset\'");
-
+//input conditionals
     if (choice === "work") {
         work()
     } else if (choice === "shop") {
@@ -53,7 +56,7 @@ const askForAction = () => {
     //     askForAction()
     // }
 }
-}
+
 
 const work = () => {
     money += tool.profit
@@ -140,6 +143,7 @@ const buyPushMower = () => {
      askForAction()
     }
  }
+ 
 
 
 document.getElementById("startBtn").addEventListener("click", start)
