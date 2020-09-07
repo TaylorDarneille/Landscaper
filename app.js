@@ -1,10 +1,5 @@
 let money = 0;
-
-
-//while (money < 1000) {
     
-
-
 const opening = () => {
 while (money < 5) {
 let teethPrompt = prompt('Welcome to Landscaping. You have $' + money + ' . What tool would you like to use?', 'teeth')
