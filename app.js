@@ -22,7 +22,7 @@ const TOOLS = {
     name: "lawnmower",
     cost: 250,
     revenue: 100,
-    has: true
+    has: false
   },
   team: {
     name: "team",
@@ -33,7 +33,7 @@ const TOOLS = {
 }
 
 //set active tool to be teeth
-let tool = TOOLS.lawnmower;
+let tool = TOOLS.teeth;
 //initialize day number and money to be zero
 let money = 350;
 let day = 0;
@@ -60,7 +60,7 @@ const askForAction = () => {
     }
     //the else is if the user hits cancel, so no choice given
   } else {
-    alert(`I guess you don't find this game very fun...I promise it is, keep going!`)
+  //  alert(`I guess you don't find this game very fun...I promise it is, keep going!`)
   }
 }
 
@@ -73,18 +73,18 @@ const buyTool = () => {
     alert(`You already have ${toolToBuy}`);
     console.log(TOOLS)
   }
-  // else if (TOOLS[toolToBuy].cost > money) {
-  //   alert(`You don't have enough money. ${toolToBuy} costs $${TOOLS[toolToBuy].cost} and you have ${money}`)
-  // }
-  // else {
-  //   alert(`You have bought ${toolToBuy}`);
-  //   // set a flag saying user has bought the tool
-  //   TOOLS[toolToBuy].has = true;
-  //   // set active tool to be latest tool.
-  //   tool = TOOLS[toolToBuy];
-  //   //reduce wallet
-  //   money -= tool.cost;
-  // }
+  else if (TOOLS[toolToBuy].cost > money) {
+    alert(`You don't have enough money. ${toolToBuy} costs $${TOOLS[toolToBuy].cost} and you have $${money}`)
+  }
+  else {
+    alert(`You have bought ${toolToBuy}`);
+    // set a flag saying user has bought the tool
+    TOOLS[toolToBuy].has = true;
+    // set active tool to be latest tool.
+    tool = TOOLS[toolToBuy];
+    //reduce wallet
+    money -= tool.cost;
+  }
 }
 
 //cut grass adds a day and adds revenue depending on which tool you have
@@ -107,6 +107,6 @@ const printToolList = () =>{
 }
 
 // main game engine
-while (day < 2) {
+while (money< 1000) {
   askForAction();
 }
