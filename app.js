@@ -112,7 +112,7 @@ const buyService = () => {
     } else if ((choice === "team" || choice === "Team") && team >= 1) {
         alert("Great! That would be $250")
         dollar += 250;
-    } else if ((choice === "team" || choice === "Team") && team > 1) {
+    } else if ((choice === "team" || choice === "Team") && team < 1) {
         alert("I dont have a team... Lemme go find one that can help me")
         goToStore();
     } else if (choice === "nothing" || choice === "Nothing") {
