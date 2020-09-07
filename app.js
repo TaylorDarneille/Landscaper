@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   buyUseMow.addEventListener("click", buyUseMower);
 
-  //function for buying mower and using, if bought once, cannout buy again
+  //function for buying Emower and using, if bought once, cannout buy again
   let boughtEmower = false;
   const buyUseEmow = document.querySelector("#button4");
   const buyUseEmower = () => {
@@ -109,6 +109,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   buyUseEmow.addEventListener("click", buyUseEmower);
 
+   //function for hiring and using students, if bought once, cannout buy again
+   let hiredStudents = false;
+   const hireUseStud = document.querySelector("#button5");
+   const hireUseStudents = () => {
+     if(hiredStudents === false) {
+       hiredStudents = true;
+       bankRoll = bankRoll - 500;
+       updateBank();
+       document.querySelector("#button5").innerHTML = "<button>Get the students to cut grass and earn $250</button> ";
+     } else {
+       bankRoll += 250;
+       updateBank();
+       checker();
+     }
+   }
+   hireUseStud.addEventListener("click", hireUseStudents);
+
 
   //function to check if the next upgrade is ready for purchase
   function checker () {
@@ -124,12 +141,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const butt4 = document.querySelector("#button4");
       butt4.innerHTML = "<button>Click me to buy Electric Mower for $250</button>";
       counter ++;
-    } else if (bankRoll >=250 && counter === 3){
-
-    } else if (bankRoll >=500 && counter === 4){
-
-    } else if (bankRoll >=25 && counter === 1){
-
+    } else if (bankRoll >=500 && counter === 3){
+      const butt5 = document.querySelector("#button5");
+      butt5.innerHTML = "<button>Hire Students to work for you for $500</button>";
+      counter ++;
+    } else if (bankRoll >= 1000 && counter === 4) {
+      const winner = document.querySelector("#landscaper");
+      winner.innerText = "You Win!!!!";
     }
   }
 });
