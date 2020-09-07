@@ -79,11 +79,6 @@ const buyScissors = () => {
 }
 
 
-start()
-
-
-
-
-
+document.getElementById("startBtn").addEventListener("click", start)
 
 
