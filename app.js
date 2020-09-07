@@ -40,9 +40,10 @@ const askForAction = () => {
         shop()
     }else if (choice === "reset") {
         start()
-    }else {
-        askForAction()
     }
+    // else {
+    //     askForAction()
+    // }
 }
 
 const work = () => {
@@ -52,7 +53,7 @@ const work = () => {
 
 const shop = () => {
     // prompt with store array values
-    const storeSelect = prompt("Welcome to the store! What did you have in mind? \n" + store[0].name + ": $" +  store[0].cost + "\n" + store[1].name + ": $" + store[1].cost + "\n" + store[2].name + ": $" + store[2].cost + "\n" + store[3].name + ": $" + store[3].cost, "type the item you want (e.g. \'Rusty Scissors\')" );
+    const storeSelect = prompt("Welcome to the store! You have $" + money + "\nWhat did you have in mind? \n" + store[0].name + ": $" +  store[0].cost + "\n" + store[1].name + ": $" + store[1].cost + "\n" + store[2].name + ": $" + store[2].cost + "\n" + store[3].name + ": $" + store[3].cost, "type the item you want (e.g. \'Rusty Scissors\')" );
     //conditional for selecting each item in the store, executes function for purchase of that item
     if (storeSelect === "Rusty Scissors") {
         buyScissors()
@@ -71,9 +72,12 @@ const buyScissors = () => {
    if (tool === store[0]) {
        alert("This item is sold out!");
        shop()
+   }else if (money < store[0].cost) {
+       alert("You do not have enough money. Get back to work!")
+       askForAction() 
    }else {
     tool = store[0]
-    console.log(tool)
+    money -= store[0].cost
     askForAction()
    }
 }
