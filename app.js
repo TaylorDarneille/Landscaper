@@ -1,4 +1,4 @@
-let money = 0
+let money = 0;
 
 
 /*while (money < 1000) {
@@ -84,3 +84,12 @@ const continueAfterLawnmower = () => {
 
 let continueLawnmower = document.querySelector('.continueAfterLawnmower');
 continueLawnmower.addEventListener('click', continueAfterLawnmower)
+//next, add fancy lawnmower purchase button
+
+const runFancyLawnmower = () => {
+    alert('You have purchased a fancy lawnmower. You may do this once.')
+    money -= 250;
+    document.querySelector('.money').innerHTML = money;
+}
+let buyFancyLawnmower = document.querySelector('.fancyLawnmower');
+buyFancyLawnmower.addEventListener('click', runFancyLawnmower);
