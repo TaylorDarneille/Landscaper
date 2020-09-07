@@ -37,6 +37,9 @@ const start = () => {
 };
 
 const askForAction = () => {
+    if (boughtStudents === true && money === 1000){
+        alert("You won the game! You are the best landscaper!")
+    }else {
     const choice = prompt("Current tool: " + tool.name + "\nYou have $" + money + "\nWhat do you want to do?", "Type in \'work\', \'shop\', or \'reset\'");
 
     if (choice === "work") {
@@ -49,6 +52,7 @@ const askForAction = () => {
     // else {
     //     askForAction()
     // }
+}
 }
 
 const work = () => {
