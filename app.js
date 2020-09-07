@@ -26,14 +26,14 @@ const teethStage = () => {
     } else if (choice === 'buy scissors' && money < 5) {
         alert('You do not have enough money! Looks like you need to cut more lawns...')
         teethStage()
-    } else (
+    } else {
         teethStage()
-    )
+    }
 }
 
 // STAGE TWO -- RUSTY OLD SCISSORS
 const scissorsStage = () => {
-    const choice = prompt('You current have $' + money + ' and a pair of rusty old scissors. What would you like to do? \n- Cut lawns (earn $5)\n- Buy an old-timey push lawnmower (spend $25)\nType your choice:',
+    const choice = prompt('You currently have $' + money + ' and a pair of rusty old scissors. What would you like to do? \n- Cut lawns (earn $5)\n- Buy an old-timey push lawnmower (spend $25)\nType your choice:',
     'cut lawns / buy lawnmower')
 
     if (choice === 'cut lawns') {
@@ -48,9 +48,31 @@ const scissorsStage = () => {
     } else if (choice === 'buy lawnmower' && money < 25) {
         alert('You do not have enough money! Looks like you need to cut more lawns...')
         scissorsStage()
-    } else (
+    } else {
         scissorsStage()
-    )
+    }
+}
+
+// STAGE THREE -- OLD-TIMEY LAWNMOWER
+const oldLawnmowerStage = () => {
+    const choice = prompt('You currently have $' + money + ' and an old-timey lawnmower. What would you like to do? \n- Cut lawns (earn $50)\n- Buy a fancy battery-powered lawnmower (spend $250)\nType your choice:',
+    'cut lawns / buy lawnmower')
+
+    if (choice === 'cut lawns') {
+        alert('You earned $50!')
+        money += 50
+        oldLawnmowerStage()
+    } else if (choice === 'buy lawnmower' && money >= 250) {
+        alert('You purchased a fancy battery-powered lawnmower!')
+        money -= 250
+        newLawnmower += 1
+        newLawnmowerStage()
+    } else if (choice === 'buy lawnmower' && money < 250) {
+        alert('You do not have enough money! Looks like you need to cut more lawns...')
+        oldLawnmowerStage()
+    } else {
+        oldLawnmowerStage()
+    }
 }
 
 // DECLARING VARIABLES WHEN GAME STARTS
