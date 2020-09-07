@@ -33,7 +33,7 @@ const teethStage = () => {
 
 // STAGE TWO -- RUSTY OLD SCISSORS
 const scissorsStage = () => {
-    const choice = prompt('You currently have $' + money + ' and a pair of rusty old scissors. What would you like to do? \n- Cut lawns (earn $5)\n- Buy an old-timey push lawnmower (spend $25)\nType your choice:',
+    const choice = prompt('You currently have $' + money + ' and a pair of rusty old scissors. What would you like to do?\n- Cut lawns (earn $5)\n- Buy an old-timey push lawnmower (spend $25)\nType your choice:',
     'cut lawns / buy lawnmower')
 
     if (choice === 'cut lawns') {
@@ -55,7 +55,7 @@ const scissorsStage = () => {
 
 // STAGE THREE -- OLD-TIMEY LAWNMOWER
 const oldLawnmowerStage = () => {
-    const choice = prompt('You currently have $' + money + ' and an old-timey lawnmower. What would you like to do? \n- Cut lawns (earn $50)\n- Buy a fancy battery-powered lawnmower (spend $250)\nType your choice:',
+    const choice = prompt('You currently have $' + money + ' and an old-timey lawnmower. What would you like to do?\n- Cut lawns (earn $50)\n- Buy a fancy battery-powered lawnmower (spend $250)\nType your choice:',
     'cut lawns / buy lawnmower')
 
     if (choice === 'cut lawns') {
@@ -72,6 +72,28 @@ const oldLawnmowerStage = () => {
         oldLawnmowerStage()
     } else {
         oldLawnmowerStage()
+    }
+}
+
+// STAGE FOUR -- BATTERY-POWERED LAWNMOWER
+const newLawnmowerStage = () => {
+    const choice = prompt('You currently have $' + money + ' and a battery-powered lawnmower. What would you like to do?\n- Cut lawns (earn $100)\n- Hire a team of starving students (spend $500)\nType your choice:',
+    'cut lawns / hire team')
+
+    if (choice === 'cut lawns') {
+        alert('You earned $100!')
+        money += 100
+        newLawnmowerStage()
+    } else if (choice === 'hire team' && money >= 500) {
+        alert('You hired a team of starving students!')
+        money -= 500
+        team += 1
+        teamStage()
+    } else if (choice === 'hire team' && money < 500) {
+        alert('You do not have enough money! Looks like you need to cut more lawns...')
+        newLawnmowerStage()
+    } else {
+        newLawnmowerStage()
     }
 }
 
