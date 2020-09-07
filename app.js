@@ -1,6 +1,11 @@
 console.log("HELLO WORLD")
 let tool = {}
 let money;
+let boughtScissors = false
+let boughtPushMower = false
+let boughtElecMower = false
+let boughtStudents = false
+
 let store = //array of objects with name, profit, and cost key:value pairs 
     [
     { name: "Rusty Scissors",
@@ -69,7 +74,7 @@ const shop = () => {
 }
 
 const buyScissors = () => {
-   if (tool === store[0]) {
+   if (boughtScissors === true) {
        alert("This item is sold out!");
        shop()
    }else if (money < store[0].cost) {
@@ -78,9 +83,12 @@ const buyScissors = () => {
    }else {
     tool = store[0]
     money -= store[0].cost
+    boughtScissors = true
+    alert("You've purchased " + store[0].name + "!")
     askForAction()
    }
 }
+
 
 
 document.getElementById("startBtn").addEventListener("click", start)
