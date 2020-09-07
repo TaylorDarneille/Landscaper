@@ -75,13 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   buyUseSciss.addEventListener("click", buyUseScissors);
 
-  //function for buying scissors and using, if bought once, cannout buy again
+  //function for buying mower and using, if bought once, cannout buy again
   let boughtMower = false;
   const buyUseMow = document.querySelector("#button3");
   const buyUseMower = () => {
     if(boughtMower === false) {
       boughtMower = true;
-      bankRoll = bankRoll - 5;
+      bankRoll = bankRoll - 25;
       updateBank();
       document.querySelector("#button3").innerHTML = "<button>Cut grass with mower to earn $50 a day</button> ";
     } else {
@@ -91,6 +91,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   buyUseMow.addEventListener("click", buyUseMower);
+
+  //function for buying mower and using, if bought once, cannout buy again
+  let boughtEmower = false;
+  const buyUseEmow = document.querySelector("#button4");
+  const buyUseEmower = () => {
+    if(boughtEmower === false) {
+      boughtEmower = true;
+      bankRoll = bankRoll - 250;
+      updateBank();
+      document.querySelector("#button4").innerHTML = "<button>Cut grass with E-Mower to earn $100 a day</button> ";
+    } else {
+      bankRoll += 100;
+      updateBank();
+      checker();
+    }
+  }
+  buyUseEmow.addEventListener("click", buyUseEmower);
 
 
   //function to check if the next upgrade is ready for purchase
@@ -103,8 +120,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const butt3 = document.querySelector("#button3");
       butt3.innerHTML = "<button>Click me to buy Mower for $25</button>";
       counter ++;
-    } else if (bankRoll >=50 && counter === 2){
-
+    } else if (bankRoll >=250 && counter === 2){
+      const butt4 = document.querySelector("#button4");
+      butt4.innerHTML = "<button>Click me to buy Electric Mower for $250</button>";
+      counter ++;
     } else if (bankRoll >=250 && counter === 3){
 
     } else if (bankRoll >=500 && counter === 4){
