@@ -131,3 +131,35 @@ const runStudents = () => {
 }
 let buyStudents = document.querySelector('.students');
 buyStudents.addEventListener('click', runStudents); 
+
+//add students prompt
+const continueAfterStudents = () => {
+    while (money < 1000) {
+    fithPrompt = prompt('Continue the Game. Which tool would you like to use? Remember, you have $' + money + ' Teeth earn $1. Scissors earn $5. Lawnmower earns $25. Fancy Lawnmower earns $100. Students earns $250.', 'teeth/scissors/lawnmower/fancy lawnmower/students');
+    if (thirdPrompt === 'teeth') {
+        alert('you chose teeth')
+        money++;
+        document.querySelector('.money').innerHTML = money;
+    } else if (fithPrompt === 'scissors') {
+        alert('you chose scissors')
+        money += 5;
+        document.querySelector('.money').innerHTML = money;
+    } else if (fithPrompt === 'lawnmower') {
+        alert('you chose lawnmower');
+        money += 25;
+        document.querySelector('.money').innerHTML = money;
+    } else if (fithPrompt === 'fancy lawnmower') {
+        alert('you chose fancy lawnmower');
+        money += 100;
+        document.querySelector('.money').innerHTML = money;
+    } else if (fithPrompt ==='students') {
+        alert('you chose a team of students');
+        money += 250;
+        document.querySelector('.money').innerHTML = money;
+    } else {
+        console.log('you need more money');
+    }
+}
+};
+let continueStudentTeam = document.querySelector('.continueStudents');
+continueStudentTeam.addEventListener('click', continueAfterStudents);
