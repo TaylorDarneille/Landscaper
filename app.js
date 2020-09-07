@@ -35,7 +35,7 @@ const TOOLS = {
 //set active tool to be teeth
 let tool = TOOLS.teeth;
 //initialize day number and money to be zero
-let money = 350;
+let money = 0;
 let day = 0;
 
 
@@ -91,7 +91,7 @@ const buyTool = () => {
 const cutGrass = () => {
   money += tool.revenue;
   day++;
-  alert(`You have earned $${tool.revenue}`)
+  alert(`You have earned $${tool.revenue} for a total of $${money}`)
 
 }
 
@@ -110,3 +110,5 @@ const printToolList = () =>{
 while (money< 1000) {
   askForAction();
 }
+//Win scenario
+alert(`Congratulations, you have built a successful landscaping empire.\nNow go outside and cut my lawn!`)
