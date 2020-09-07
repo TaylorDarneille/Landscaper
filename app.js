@@ -75,21 +75,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   buyUseSciss.addEventListener("click", buyUseScissors);
 
-  // let boughtScissors = false;
-  // const buyUseSciss = document.querySelector("#button2");
-  // const buyUseScissors = () => {
-  //   if(boughtScissors === false) {
-  //     boughtScissors = true;
-  //     bankRoll = bankRoll - 5;
-  //     updateBank();
-  //     document.querySelector("#button2").innerHTML = "<button>Cut grass with scissors to earn $5 a day</button> ";
-  //   } else {
-  //     bankRoll += 5;
-  //     updateBank();
-  //   }
-  // }
-  // buyUseSciss.addEventListener("click", buyUseScissors);
+  //function for buying scissors and using, if bought once, cannout buy again
+  let boughtMower = false;
+  const buyUseMow = document.querySelector("#button3");
+  const buyUseMower = () => {
+    if(boughtMower === false) {
+      boughtMower = true;
+      bankRoll = bankRoll - 5;
+      updateBank();
+      document.querySelector("#button3").innerHTML = "<button>Cut grass with mower to earn $50 a day</button> ";
+    } else {
+      bankRoll += 50;
+      updateBank();
+      checker();
+    }
+  }
+  buyUseMow.addEventListener("click", buyUseMower);
 
+
+  //function to check if the next upgrade is ready for purchase
   function checker () {
     if (bankRoll >= 5 && counter === 0) {
       const butt2 = document.querySelector("#button2");
