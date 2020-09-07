@@ -43,20 +43,20 @@ const goToStore = () => {
         alert("You do not have enough for pushmower");
         goToStore();
         //buy powermower
-    } else if ((choice === "powermower" || choice === "Powermower") && dollar > 5) {
+    } else if ((choice === "powermower" || choice === "Powermower") && dollar >= 250) {
         alert("That would be $250");
         scissors++;
         dollar -= 250;
         myAccount();
-    } else if ((choice === "powermower" || choice === "Powermower") && dollar < 5) {
+    } else if ((choice === "powermower" || choice === "Powermower") && dollar < 250) {
         alert("You do not have enough for powermower");
         goToStore();
-    } else if ((choice === "team" || choice === "Team") && dollar > 5) {
-        alert("That would be $5");
+    } else if ((choice === "team" || choice === "Team") && dollar >= 500) {
+        alert("That would be $500");
         scissors++;
-        dollar -= 5;
+        dollar -= 500;
         myAccount();
-    } else if ((choice === "team" || choice === "Team") && dollar < 5) {
+    } else if ((choice === "team" || choice === "Team") && dollar < 500) {
         alert("You do not have enough for team");
         goToStore();
     } else if (choice === "nothing" || choice === "Nothing") {
