@@ -29,7 +29,19 @@ mowLawn.addEventListener('click', mowLawn => {
     alert(`You mowed a lawn with your ${tools[0].name} for $${tools[0].value}`)
     money += tools[0].value
     moneyDiv.innerText = `Money: $${money}`
-    if (money >=1000 && tools[0].name === 'college students') alert('Congratuations! You win!')
+    //function to make sure user buys everything and does't just skip to students
+    //there might be a shorter way to write this, but it works
+    
+    const check = (toolName) => {
+        for (let tool of tools) {
+        if (tool.name === toolName) {
+        return true
+    }}} 
+
+    if (money >=1000 && check('rusty scissors') === true && check('push mower') === true && check('electric mower') === true && check('college students') === true) alert('Congratuations! You win!')
+    
+    // Secret ending
+    if (money >=1000 && tools[0].name === 'teeth') alert('You just really enjoy the taste of grass, don\'t you')
 })
 
 //List of what's available in the store
@@ -41,18 +53,6 @@ let inventory = [
 ]
 
 //Shopping function
-
-// const shopping = () => {
-// for (let item of inventory) {
-//     // if (money >= item.price) {
-//     //     tools.unshift(inventory[item])
-//     //     money -= item.price
-//     //     inventory.shift()
-//     // } 
-//     // else alert(`You don't have enough money! Mow some more lawns and come back later!`)
-//     console.log(item.price)
-// }
-// }
 
 const storeButtons = document.querySelectorAll('.store')
 
@@ -82,7 +82,6 @@ pushMower.addEventListener('click', run => {shopping(1)})
 const electricMower = document.querySelector('#electric_mower')
 electricMower.innerText = `${inventory[2].name} ($${inventory[2].price})`
 electricMower.addEventListener('click', run => {shopping(2)})
-
 
 const students = document.querySelector('#students')
 students.innerText = `${inventory[3].name} ($${inventory[3].price})`
