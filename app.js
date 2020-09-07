@@ -6,10 +6,8 @@ let money = 0
 }*/
 
 const opening = () => {
-    
-    while (money < 5) {
-        
-let teethPrompt = prompt('Welcome to Landscaping. You have $' + money + ' . What tool would you like to use?', )
+while (money < 5) {
+let teethPrompt = prompt('Welcome to Landscaping. You have $' + money + ' . What tool would you like to use?', 'teeth')
     if (teethPrompt === 'teeth') {
         alert('you will be using your teeth and will earn $1 for the day.');
         money++;
@@ -55,11 +53,34 @@ continueScissors.addEventListener('click', continueAfterScissors);
 //Next, add a buy lawnmower button to complete step 5
 
 const runLawnmower = () => {
-    alert('You have purchased a lawnmower. You now have $' + money)
+    alert('You have purchased a lawnmower. You may do this once.')
     money -= 25;
     document.querySelector('.money').innerHTML = money;
 }
-
-
 let buyLawnmower = document.querySelector('.lawnmower');
 buyLawnmower.addEventListener('click', runLawnmower);
+
+//continue after purchasing lawnmower
+const continueAfterLawnmower = () => {
+    while (money < 250) {
+    thirdPrompt = prompt('Continue the Game. Which tool would you like to use? Remember, you have $' + money + ' Teeth earn $1. Scissors earn $5. Lawnmower earns $25.', 'teeth/scissors/lawnmower');
+    if (thirdPrompt === 'teeth') {
+        alert('you chose teeth')
+        money++;
+        document.querySelector('.money').innerHTML = money;
+    } else if (thirdPrompt === 'scissors') {
+        alert('you chose scissors')
+        money += 5;
+        document.querySelector('.money').innerHTML = money;
+    } else if (thirdPrompt === 'lawnmower') {
+        alert('you chose lawnmower');
+        money += 25;
+        document.querySelector('.money').innerHTML = money;
+    } else {
+        console.log('you need more money');
+    }
+}
+};
+
+let continueLawnmower = document.querySelector('.continueAfterLawnmower');
+continueLawnmower.addEventListener('click', continueAfterLawnmower)
