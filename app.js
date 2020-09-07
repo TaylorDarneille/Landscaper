@@ -49,8 +49,33 @@ const work = () => {
 
 const shop = () => {
     // prompt with store array values
-    const inventory = prompt("Welcome to the store! What did you have in mind? \n" + store[0].name + ": $" +  store[0].cost + "\n" + store[1].name + ": $" + store[1].cost + "\n" + store[2].name + ": $" + store[2].cost + "\n" + store[3].name + ": $" + store[3].cost, "type the item you want" ) 
+    const storeSelect = prompt("Welcome to the store! What did you have in mind? \n" + store[0].name + ": $" +  store[0].cost + "\n" + store[1].name + ": $" + store[1].cost + "\n" + store[2].name + ": $" + store[2].cost + "\n" + store[3].name + ": $" + store[3].cost, "type the item you want (e.g. \'Rusty Scissors\')" );
     //conditional for selecting each item in the store, executes function for purchase of that item
+    if (storeSelect === "Rusty Scissors") {
+        buyScissors()
+    }else if (storeSelect === "Push Mower") {
+        buyPushMower()
+    }else if (storeSelect === "Battery-powered Mower") {
+        buyElecMower()
+    }else if (storeSelect === "Team of Students") {
+        buyStudents()
+    }else {
+        askForAction()
+    }
 }
+
+const buyScissors = () => {
+    tool = store[0]
+    console.log(tool)
+    askForAction()
+}
+
+
+
+
+
+
+
+
 
 start()
