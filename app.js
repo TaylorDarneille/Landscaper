@@ -8,84 +8,69 @@ const start = () => {
 
 //Start the landscaping game
 const  startCutting = () => {
+  money++;  
   const go = alert("Let's use your teeth to begin cutting!");
-  money++;
-  alert("Great! You now have $" + money);
-  const moreMoney = prompt("Keep going?", "Yes or No?");
-  if (moreMoney === "Yes" || moreMoney === "yes") {
-      money++;
-      keepGoing();
-  } else if (moreMoney === "No" || moreMoney === "no"){
-      stop();
-  }
-}
-
-const stop = () => {
-    // const areYouSure = prompt("Are you sure you don't want to keep going?", "Yes or No")
-    // if (areYouSure === "Yes" || areYouSure === "yes"){
-        alert("Tired of using your teeth, huh? You finished with $" + money)
-    // } else {
-    //     keepGoing();
-    // }
-    
-}
-
-//Unlimited teeth cutting
-const keepGoing = () => {
+  while(money<5) {
     alert("Great! You now have $" + money);
     const moreMoney = prompt("Keep going?", "Yes or No?");
     if (moreMoney === "Yes" || moreMoney === "yes") {
         money++;
-        alert("Great! You now have $" + money);
-        money++;
-        restart();
-    } else if (moreMoney === "No" || moreMoney === "no"){
+    } else {
         stop();
-        }  
-};
+    }
+  }
 
-const restart = () => {
-    const moreMoney = prompt("Keep going?", "Yes or No?");
-    if (moreMoney === "Yes" || moreMoney === "yes") {
+// Buy Scissors  
+  while(money<20){
+    const buyScissors = prompt("You now have $" + money + "! Would you like to buy scissors to help you cut the grass!", "Yes or No?");
+        if (buyScissors === "Yes" || buyScissors === "yes") {
+            scissors();
+            break;
+        } else if (buyScissors === "No" || buyScissors === "no") {
+            keepGoing();
+        } else {
+            stop();
+        }  
+    }
+}  
+
+// Stop cutting
+const stop = () => {
+    const areYouSure = prompt("Are you sure you don't want to keep going?", "Yes or No")
+    if (areYouSure === "Yes" || areYouSure === "yes"){
+        alert ("Tired of using your teeth, huh? You finished with $" + money);
+        start();
+    } else{
         keepGoing();
-    } else if (moreMoney === "No" || moreMoney === "no"){
-        stop();
-        } 
+    }
 }
 
+//Unlimited teeth cutting
+const keepGoing = () => {
+    money++;
+    const buyScissors = prompt("You now have $" + money + "! Would you like to buy scissors to help you cut the grass!", "Yes or No?");
+    if (buyScissors === "Yes" || buyScissors === "yes") {
+     scissors();
+    } else if (buyScissors === "No" || buyScissors === "no") {
+     keepGoing();
+    }  else {
+     stop();
+    }
+}
 
-// // // Buy supplies
-// const shop = () => {
-//   const supplies = prompt ("Welcome to Ralphs! Do you need to buy syrup or waffles?", "Syrup or Waffles or Both");
-//   if(supplies === "Syrup") {
-//   buySyrup();
-// } else if (supplies === "Waffles"){
-//   buyWaffles();
-// } else if(supplies === "Both") {
-//   buyBoth();
-// };
-// };
-
-// // // Checkout
-
-// const buySyrup = () => {
-//   const purchaseSyrup = prompt("Syrup is on aisle 9. Buy Now?", "Yes or No");
-//   if (purchaseSyrup === "Yes") {
-//     syrup++;
-//     money -=5;
-//     alert ("You now have " + syrup + "and $" + money + ". Time to make some waffles!");
-//   } else if (purchaseSyrup === "No") {
-//     alert ("You still have $" + money + ". It seems like you don't want any waffles. See you later!");
-//   };
-// };
-
-// const buyWaffles = () => {
-//   const purchaseWaffles = prompt("Waffles are on aisle 15. Buy Now?", "Yes or No")
-//   if (purchaseWaffles === "Yes") {
-//     waffles++;
-//     money -=5;
-//     alert ("You now have " + waffles + "and $" + money + ". Time to make some waffles!")
-//   } else if (purchaseWaffles === "No") {
-//       alert ("You still have $" + money + ". It seems like you don't want any waffles. See you later!")
-//     }
-// };
+//Unlimited scissor cutting
+const scissors = () => {
+    const cut = alert("Let's use your scissors to cut the grass!");
+    while(money < 25){
+        let y = money+5;
+        alert("Great! You now have $" + y);
+        const moreMoney = prompt("Keep going?", "Yes or No?");
+        if (moreMoney === "Yes" || moreMoney === "yes") {
+            let y = money;
+            money = y+5;
+        } else {
+        stop();
+        }
+    }
+    
+}
