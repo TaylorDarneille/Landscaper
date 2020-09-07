@@ -26,8 +26,9 @@ start()
             alert("Now you have $" + money + ". It's day " + days)
     }
         if (teeth === "No"){
+            days ++ 
             alert("Sorry to see you go today, come back tomorrow when you're ready to work. You have $" + money + " It's day  " + days)
-             days ++ 
+            
         
         } 
         while(money >=5){
@@ -166,7 +167,7 @@ function buyTeam (){
     money-=500
     let useTeam= prompt("You now have a team of starving students. Would you like to use it?","Yes or No")
         if(useteam === "Yes"){
-            earnMoneyWithTeam()
+            earnMoneyWithTeam ()
 
     }else if (useTeam=== "No"){
         earnMoneyWithBatteryLawnmower()
@@ -174,20 +175,27 @@ function buyTeam (){
 }
 buyTeam ()
 
-// function earnMoneyWithTeam (){
+function earnMoneyWithTeam (){
 
-//     while(money < 1000){
-//         let team= prompt("Cut grass with team of starving students to earn $500", "Yes or No")
-//     if ( team === "Yes"){
-//         money +=500
-//         days ++
-//         alert("Now you have $" + money + ". It's day " + days)
-//     }else if (Team === "No"){
-//         alert("Sorry to see you go today, come back tomorrow when you're ready to work. You have $" + money + " It's day  " + days)
-//          days ++ 
-//     }
+    while(money < 1000){
+        let team= prompt("Cut grass with team of starving students to earn $500", "Yes or No")
+    if (team === "Yes"){
+        money +=500
+        days ++
+        alert("Now you have $" + money + ". It's day " + days)
+    }else if (Team === "No"){
+        alert("Sorry to see you go today, come back tomorrow when you're ready to work. You have $" + money + " It's day  " + days)
+         days ++ 
+    }
+}
+while (money >= 1000){
+      winner()
+}
+}
+earnMoneyWithTeam ()
 
-// //     while( money >=1000)
-// //     alert( "congratulations!! You have earned $1,000 and have a team of starving students )
-// // }
-// earnMoneyWithTeam ()
+function winner (){
+    while(money >=1000){
+        alert("Congratulations!!!! You have earned $1000 and have a team of starving students.")
+    }
+}
