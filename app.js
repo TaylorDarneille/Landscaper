@@ -1,9 +1,9 @@
 let money = 0;
 
 
-/*while (money < 1000) {
+//while (money < 1000) {
     
-}*/
+
 
 const opening = () => {
 while (money < 5) {
@@ -160,6 +160,9 @@ const continueAfterStudents = () => {
         console.log('you need more money');
     }
 }
+    if (money === 1000){
+        alert('You Won!!!!');
+    }
 };
 let continueStudentTeam = document.querySelector('.continueStudents');
 continueStudentTeam.addEventListener('click', continueAfterStudents);
