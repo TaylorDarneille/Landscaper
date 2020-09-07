@@ -81,7 +81,8 @@ const  askForService = () => {
 } 
 
 const buyService = () => {
-    const choice = prompt("What service would you like?", "$1 teeth, $5 scissors, $25 push mower, or $100 power mower, or nothing");
+    alert("The service we offer: $1 teeth, $5 scissors, $50 pushmower, $100 powermower $250 for team");
+    const choice = prompt("What service would you like?", " or say nothing");
     if (choice === "teeth" || choice === "teeth") {
         alert("That would be $1 dollar please");
         //cut grass for $1
@@ -95,8 +96,8 @@ const buyService = () => {
         goToStore();
         //ask for pushmower $25
     } else if ((choice === "pushmower" || choice === "Pushmower") && pushmower >= 1) {
-        alert("Great! That would be $25");
-        dollar += 25;
+        alert("Great! That would be $50");
+        dollar += 50;
     } else if ((choice === "pushmower" || choice === "Pushmower") && pushmower < 1) {
         alert("It looks like i need to go to the store")
         goToStore();
