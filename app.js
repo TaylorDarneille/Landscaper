@@ -5,11 +5,6 @@ let boughtScissors = false
 let boughtPushMower = false
 let boughtElecMower = false
 let boughtStudents = false
-const winner = () => {
-    if (boughtStudents === true && money >= 1000){
-   alert("You won the game! You are the best landscaper!")
-   }
-}
 
 let store = //array of objects with name, profit, and cost key:value pairs 
     [
@@ -31,7 +26,6 @@ let store = //array of objects with name, profit, and cost key:value pairs
     } 
     ]
 
-
 const start = () => {
     money = 0;
     tool = {
@@ -52,9 +46,9 @@ const askForAction = () => {
     }else if (choice === "reset") {
         start()
     }
-    // else {
-    //     askForAction()
-    // }
+    else {
+        askForAction()
+    }
 }
 
 
@@ -65,15 +59,15 @@ const work = () => {
 
 const shop = () => {
     // prompt with store array values
-    const storeSelect = prompt("Welcome to the store! You have $" + money + "\nWhat did you have in mind? \n" + store[0].name + ": $" +  store[0].cost + "\n" + store[1].name + ": $" + store[1].cost + "\n" + store[2].name + ": $" + store[2].cost + "\n" + store[3].name + ": $" + store[3].cost, "type the item you want (e.g. \'Rusty Scissors\')" );
+    const storeSelect = prompt("Welcome to the store! You have $" + money + "\nWhat did you have in mind? \n" + "1. " + store[0].name + ": $" +  store[0].cost + "\n" + "2. " + store[1].name + ": $" + store[1].cost + "\n" + "3. " + store[2].name + ": $" + store[2].cost + "\n" + "4. " + store[3].name + ": $" + store[3].cost, "type in the number of the item you want");
     //conditional for selecting each item in the store, executes function for purchase of that item
-    if (storeSelect === "Rusty Scissors") {
+    if (storeSelect === "1") {
         buyScissors()
-    }else if (storeSelect === "Push Mower") {
+    }else if (storeSelect === "2") {
         buyPushMower()
-    }else if (storeSelect === "Battery-powered Mower") {
+    }else if (storeSelect === "3") {
         buyElecMower()
-    }else if (storeSelect === "Team of Students") {
+    }else if (storeSelect === "4") {
         buyStudents()
     }else {
         askForAction()
@@ -144,6 +138,11 @@ const buyPushMower = () => {
     }
  }
  
+ const winner = () => {
+    if (boughtStudents === true && money >= 1000){
+   alert("You won the game! You are the best landscaper!")
+   }
+}
 
 
 document.getElementById("startBtn").addEventListener("click", start)
