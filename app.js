@@ -100,14 +100,14 @@ const buyService = () => {
     } else if ((choice === "pushmower" || choice === "Pushmower") && pushmower < 1) {
         alert("It looks like i need to go to the store")
         goToStore();
-        //ask for powermower
+        //ask for powermower $100
     } else if ((choice === "powermower" || choice === "Powermower") && powermower >= 1) {
         alert("Great! That would be $100")
         dollar += 100;
     } else if ((choice === "powermower" || choice === "Powermower") && powermower < 1) {
         alert("Lemme head to Lowes real quick!")
         goToStore();
-
+        //ask for team $250
     } else if ((choice === "team" || choice === "Team") && team >= 1) {
         alert("Great! That would be $250")
         dollar += 250;
