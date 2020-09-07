@@ -96,7 +96,7 @@ const buyService = () => {
         //ask for pushmower $25
     } else if ((choice === "pushmower" || choice === "Pushmower") && pushmower >= 1) {
         alert("Great! That would be $25");
-        dollar += $25;
+        dollar += 25;
     } else if ((choice === "pushmower" || choice === "Pushmower") && pushmower < 1) {
         alert("It looks like i need to go to the store")
         goToStore();
