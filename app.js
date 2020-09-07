@@ -97,6 +97,36 @@ const newLawnmowerStage = () => {
     }
 }
 
+// STAGE FIVE -- TEAM OF STUDENTS
+const teamStage = () => {
+    if (money >= 1000) {
+        alert('Congrats on earning over $1,000 and employing a team of students! You are a huge success in the landscaping business!')
+        endGame()
+    } else if (money < 1000) {
+        const choice = prompt('You currently have $' + money + ' and a team of starving students. What would you like to do?\n- Cut lawns (earn $250)',
+        'cut lawns')
+        if (choice === 'cut lawns') {
+            alert('You earned $250!')
+            money += 250
+            teamStage()
+        } else (
+            teamStage()
+        )
+    }
+}
+
+//     if (choice === 'cut lawns' && money < 1000) {
+//         alert('You earned $250!')
+//         money += 250
+//         teamStage()
+//     } else if (choice === 'cut lawns' && money >= 1000) {
+//         alert('Congrats on earning over $1,000! You are a huge success in the landscaping business!')
+//         endGame()
+//     } else {
+//         teamStage()
+//     }
+// }
+
 // DECLARING VARIABLES WHEN GAME STARTS
 const start = () => {
     money = 0
