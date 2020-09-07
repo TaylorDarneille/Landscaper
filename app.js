@@ -89,6 +89,53 @@ const buyScissors = () => {
    }
 }
 
+const buyPushMower = () => {
+    if (boughtPushMower === true) {
+        alert("This item is sold out!");
+        shop()
+    }else if (money < store[1].cost) {
+        alert("You do not have enough money. Get back to work!")
+        askForAction() 
+    }else {
+     tool = store[1]
+     money -= store[1].cost
+     boughtPushMower = true
+     alert("You've purchased " + store[1].name + "!")
+     askForAction()
+    }
+ }
+
+ const buyElecMower = () => {
+    if (boughtElecMower === true) {
+        alert("This item is sold out!");
+        shop()
+    }else if (money < store[2].cost) {
+        alert("You do not have enough money. Get back to work!")
+        askForAction() 
+    }else {
+     tool = store[2]
+     money -= store[2].cost
+     boughtElecMower = true
+     alert("You've purchased " + store[2].name + "!")
+     askForAction()
+    }
+ }
+
+ const buyStudents = () => {
+    if (boughtStudents === true) {
+        alert("This item is sold out!");
+        shop()
+    }else if (money < store[3].cost) {
+        alert("You do not have enough money. Get back to work!")
+        askForAction() 
+    }else {
+     tool = store[3]
+     money -= store[3].cost
+     boughtStudents = true
+     alert("You've purchased " + store[3].name + "!")
+     askForAction()
+    }
+ }
 
 
 document.getElementById("startBtn").addEventListener("click", start)
