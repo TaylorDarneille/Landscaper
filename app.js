@@ -122,3 +122,12 @@ const continueAfterFancyLawnmower = () => {
 
 let continueFancyLawnmower = document.querySelector('.continueAfterFancyLawnmower');
 continueFancyLawnmower.addEventListener('click', continueAfterFancyLawnmower);
+
+//add team of students instructions/button
+const runStudents = () => {
+    alert('You have purchased a team of students. You may do this once.')
+    money -= 500;
+    document.querySelector('.money').innerHTML = money;
+}
+let buyStudents = document.querySelector('.students');
+buyStudents.addEventListener('click', runStudents); 
