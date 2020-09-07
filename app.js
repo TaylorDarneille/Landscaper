@@ -42,6 +42,7 @@ const goToStore = () => {
     } else if ((choice === "pushmower" || choice === "Pushmower") && dollar < 25) {
         alert("You do not have enough for pushmower");
         goToStore();
+        //buy powermower
     } else if ((choice === "powermower" || choice === "Powermower") && dollar > 5) {
         alert("That would be $250");
         scissors++;
@@ -106,7 +107,7 @@ const buyService = () => {
     } else if ((choice === "powermower" || choice === "Powermower") && powermower < 1) {
         alert("Lemme head to Lowes real quick!")
         goToStore();
-        
+
     } else if ((choice === "team" || choice === "Team") && team >= 1) {
         alert("Great! That would be $250")
         dollar += 250;
