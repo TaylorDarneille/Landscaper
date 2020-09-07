@@ -1,3 +1,4 @@
+// alert("You can cut the lawn with your teeth");
 
 const greet =() => {
     alert("You are starting a landscaping business, but all you have are your teeth.")
@@ -7,7 +8,7 @@ greet();
 let lawnsCut;
 let money;
 let tool;
-// alert("You can cut the lawn with your teeth");
+let toolBox = []
 const start = () => {
     lawnsCut = 0;
     money= 0;
@@ -34,24 +35,24 @@ const askForAction= () => {
         "Will you cut the lawn?",
         "Yes/No/Restart"
     );
-    if (choice === "Yes"){
+    if (choice === "Yes" || choice === "yes"){
         cutLawns()
-    }else if (choice === "No"){
+    }else if (choice === "No" || choice === "no"){
         beLazy()
-    } else if (choice === "Restart") {
+    } else if (choice === "Restart"|| choice === "restart") {
         alert("Better luck next time!")
         start();
     }
 };
 const storeTools = () => {
-    if (money === 5 && tool !== "rustyScissors"){
+    if (money === 5 && toolBox.includes("rustyScissors")=== false){
         askForScissors();
-    } else if(money === 25 && tool !== "oldMower"){
+    } else if(money === 25  && toolBox.includes("oldMower")=== false ){
         askForOldMower();
-    } else if (money >= 250  && tool !== "newMower"){
+    } else if (money >= 250  && toolBox.includes("newMower")=== false){
         askForNewMower();
-    } else if (money >= 500 && tool !== "starvingStudent"){
-        askForStudent();
+    } else if (money >= 500  && toolBox.includes("starvingStudents")=== false){
+        askForStudents();
     }
 }
 
@@ -65,6 +66,8 @@ const cutLawns = () => {
         cutWithOldMower();
     }else if (tool === "newMower"){
         cutWithNewMower();
+    }else if (tool === "starvingStudents"){
+        cutWithStudents();
     }
 };
 //adds lawn cut an $1
@@ -87,58 +90,68 @@ const cutWithScissors = () => {
 //make the mower add $50 per lawn cut
 const cutWithOldMower = () => {
     lawnsCut++;
-    money+= 50;
+    money += 50;
     askForAction();
 };
 
 //make the mower add $100 per lawn cut
 const cutWithNewMower = () => {
     lawnsCut++;
-    money+= 100;
+    money += 100;
+    askForAction();
+};
+//make the students add $250 
+const cutWithStudents = () => {
+    lawnsCut++;
+    money += 250;
     askForAction();
 }
 
 //ask if you want scissors
 const askForScissors = () => {
     const wantScissors = prompt("Do you want to buy some rusty scissors for $5?", "Yes/No");
-    if (wantScissors === "Yes"){
+    if (wantScissors === "Yes" || wantScissors === "yes"){
         money -= 5;
         tool = "rustyScissors";
+        toolBox.push("rustyScissors")
         showStatus();
-    } else if (wantScissors === "No") {
+    } else if (wantScissors === "No" || wantScissors === "no") {
         askForAction();
     };
 }
 // ask if you want a mower
 const askForOldMower = () => {
     const wantOldMower = prompt ("Do you want to buy an old-timey push lawnmower for $25?", "Yes/No");
-    if (wantOldMower === "Yes"){
+    if (wantOldMower === "Yes"|| wantOldMower === "yes"){
         money -= 25;
         tool = "oldMower";
+        toolBox.push("oldMower")
         showStatus();
-    }else if (wantOldMower === "No") {
+    }else if (wantOldMower === "No" || wantOldMower === "no") {
         askForAction();
     };
 }
 
 const askForNewMower = () => {
     const wantNewMower = prompt ("Do you want to buy a fancy battery-powered lawnmower for $250?", "Yes/No");
-    if (wantNewMower === "Yes") {
+    if (wantNewMower === "Yes" || wantNewMower === "yes") {
         money -= 250;
         tool = "newMower";
+        toolBox.push("newMower")
         showStatus();
-    } else if (wantOldMower === "No") {
+    } else if (wantOldMower === "No" || wantNewMower === "no") {
         askForAction();
-    }
+    };
 }
 
-const askForStudent = () => {
-    const wantStarvingStudent = prompt ("Do you want to hire some starving students for $500?", "Yes/No");
-    if (wantStarvingStudent === "Yes") {
+const askForStudents = () => {
+    const wantStarvingStudents = prompt ("Do you want to hire some starving students for $500?", "Yes/No");
+    if (wantStarvingStudents === "Yes" || wantStarvingStudents === "yes") {
         money -= 500;
-        tool = "starvingStudent";
+        tool = "starvingStudents";
+        toolBox.push("starvingStudents")
         showStatus();
-    }else if (wantStarvingStudent === "No") {
+    }else if (wantStarvingStudents === "No" || wantStarvingStudents === "no") {
         askForAction();
     }
 }
