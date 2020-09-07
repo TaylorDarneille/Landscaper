@@ -58,19 +58,4 @@ const keepGoing = () => {
     }
 }
 
-//Unlimited scissor cutting
-const scissors = () => {
-    const cut = alert("Let's use your scissors to cut the grass!");
-    while(money < 25){
-        let y = money+5;
-        alert("Great! You now have $" + y);
-        const moreMoney = prompt("Keep going?", "Yes or No?");
-        if (moreMoney === "Yes" || moreMoney === "yes") {
-            let y = money;
-            money = y+5;
-        } else {
-        stop();
-        }
-    }
-    
-}
+
