@@ -93,3 +93,32 @@ const runFancyLawnmower = () => {
 }
 let buyFancyLawnmower = document.querySelector('.fancyLawnmower');
 buyFancyLawnmower.addEventListener('click', runFancyLawnmower);
+
+//add fancy lawnmower operation 
+const continueAfterFancyLawnmower = () => {
+    while (money < 500) {
+    fourthPrompt = prompt('Continue the Game. Which tool would you like to use? Remember, you have $' + money + ' Teeth earn $1. Scissors earn $5. Lawnmower earns $25. Fancy Lawnmower earns $100.', 'teeth/scissors/lawnmower/fancy lawnmower');
+    if (thirdPrompt === 'teeth') {
+        alert('you chose teeth')
+        money++;
+        document.querySelector('.money').innerHTML = money;
+    } else if (fourthPrompt === 'scissors') {
+        alert('you chose scissors')
+        money += 5;
+        document.querySelector('.money').innerHTML = money;
+    } else if (fourthPrompt === 'lawnmower') {
+        alert('you chose lawnmower');
+        money += 25;
+        document.querySelector('.money').innerHTML = money;
+    } else if (fourthPrompt === 'fancy lawnmower') {
+        alert('you chose fancy lawnmower');
+        money += 100;
+        document.querySelector('.money').innerHTML = money;
+    } else {
+        console.log('you need more money');
+    }
+}
+};
+
+let continueFancyLawnmower = document.querySelector('.continueAfterFancyLawnmower');
+continueFancyLawnmower.addEventListener('click', continueAfterFancyLawnmower);
