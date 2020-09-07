@@ -21,28 +21,27 @@ const showStatus = () => {
 };
 //what will the actions do?
 const askForAction= () => {
-    checkWinner();
-    showStatus();
-    if (money === 5 || money >= 25 || money >= 250 || money >= 500){
-        storeTools();
+    if (money === 1000){
+        alert("You are a winner! Great job!");
+    } else {
+        showStatus();
+        if (money === 5 || money >= 25 || money >= 250 || money >= 500){
+            storeTools();
+        }
+        const choice = prompt(
+            "Will you cut the lawn?",
+            "Yes/No/Restart"
+        );
+        if (choice === "Yes" || choice === "yes"){
+            cutLawns()
+        }else if (choice === "No" || choice === "no"){
+            beLazy()
+        } else if (choice === "Restart"|| choice === "restart") {
+            alert("Better luck next time!")
+            start();
+        }
     }
-    // if (money === 5 && tool !== "rustyScissors"){
-    //     askForScissors();
-    // if(money === 25 && tool !== "oldMower"){
-    //     askForOldMower();
-    // }
-    const choice = prompt(
-        "Will you cut the lawn?",
-        "Yes/No/Restart"
-    );
-    if (choice === "Yes" || choice === "yes"){
-        cutLawns()
-    }else if (choice === "No" || choice === "no"){
-        beLazy()
-    } else if (choice === "Restart"|| choice === "restart") {
-        alert("Better luck next time!")
-        start();
-    }
+    
 };
 const storeTools = () => {
     if (money === 5 && toolBox.includes("rustyScissors")=== false){
@@ -155,9 +154,5 @@ const askForStudents = () => {
         askForAction();
     }
 }
-const checkWinner = () => {
-    if (money === 1000){
-        alert("You are a winner! Great job!");
-    }
-}
+
 start();
