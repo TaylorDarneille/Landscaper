@@ -1,4 +1,4 @@
-let money = 5 ;
+let money = 5;
 let rustyScissor = false;
 let lawnmower = false;
 let lawnmowerBattery = false;
@@ -109,7 +109,7 @@ const useLawnmowerTwo = () => {
           money += 100
           alert("Money: $"+ money)
           useLawnmowerTwo()
-          }else if (usingLawnmoweTwo === "Yes" && money === 500){
+          }else if (usingLawnmowerTwo === "Yes" && money === 500){
                 ("Money: $"+ money+" || You have a battery powered landmower")
                getStarvingStudents()
            } else if ( usingLawnmower === "No"){
@@ -121,14 +121,26 @@ const useLawnmowerTwo = () => {
     }
 }
 const getStarvingStudents = () => {
-    let gettingStarvingStudents = prompt("Do you want to buy a battery powered Lawnmower?","Yes or No")
+    let gettingStarvingStudents = prompt("Do you want to hire a team of students","Yes or No")
     if (gettingStarvingStudents === "Yes"){
         money -= 500
         starvingStudents = true 
         alert("Money: $"+ money+" || You have a group of starving students")
-          useLawnmowerTwo()
+          useStarvingStudents()
       }else if (gettingStarvingStudents === "No"){
           useLawnmowerTwo()
+    }
+}
+const useStarvingStudents = () => {
+        let usingStarvingStudents = prompt("Want to spend the day cutting grass with your team of students?","Yes or No")
+        if (usingStarvingStudents === "Yes" && money < 1000){
+          money += 250
+          alert("Money: $"+ money)
+          useStarvingStudents
+        }else if (usingStarvingStudents === "Yes" && money === 1000){
+                alert("You won the game!")
+        } else if ( usingStarvingStudents === "No"){
+               useStarvingStudents()
     }
 }
 start()
