@@ -2,6 +2,7 @@ let money = 5 ;
 let rustyScissor = false;
 let lawnmower = false;
 let lawnmowerBattery = false;
+let starvingStudents = false;
 
 const start = () => {
     useTeeth()
@@ -101,5 +102,22 @@ const getLawnmowerTwo = () => {
     }
 }
 
-
+const useLawnmowerTwo = () => {
+    while( starvingStudents === false){
+        let usingLawnmowerTwo = prompt("Want to spend the day cutting grass with your battery powered lawnmower?","Yes or No")
+        if (usingLawnmowerTwo === "Yes" && (money > 500|| money < 500)){
+          money += 100
+          alert("Money: $"+ money)
+          useLawnmowerTwo()
+          }else if (usingLawnmoweTwo === "Yes" && money === 500){
+                ("Money: $"+ money+" || You have a battery powered landmower")
+               getStarvingStudents()
+           } else if ( usingLawnmower === "No"){
+               useLawnmowerTwo()
+    
+            }
+       }if ( starvingStudents === true){
+        useStarvingStudents()
+    }
+}
 start()
