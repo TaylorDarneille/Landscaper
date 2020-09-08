@@ -93,7 +93,7 @@ function buyPushLawnMower (){
         if(usePush === "Yes"){
             earnMoneyWithPushLawnmower()
 
-    }else if (usePush=== "No"){
+    }else if (usePush === "No"){
         earnMoneyWithScissors()
     }
 }
@@ -167,7 +167,7 @@ function buyTeam (){
     money-=500
     let useTeam= prompt("You now have a team of starving students. Would you like to use it?","Yes or No")
         if(useteam === "Yes"){
-            earnMoneyWithTeam ()
+            earnMoneyWithTeam()
 
     }else if (useTeam=== "No"){
         earnMoneyWithBatteryLawnmower()
@@ -177,7 +177,7 @@ buyTeam ()
 
 function earnMoneyWithTeam (){
 
-    while(money < 1000){
+    while(money <= 1000){
         let team= prompt("Cut grass with team of starving students to earn $500", "Yes or No")
     if (team === "Yes"){
         money +=500
