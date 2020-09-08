@@ -62,6 +62,7 @@ const goToStore = () => {
     } else if ((choice === "powermower" || choice === "Powermower") && dollar < 250) {
         alert("This too fancy for you, try Sears.");
         goToStore();
+        
      
    
 }
@@ -94,7 +95,16 @@ const buyService = () => {
     } else if ((choice === "Pushmower" || choice === "powermower") && powermower < 1) {
         alert("I guess I need to go to the store!")
         goToStore();
-    } 
+    } else if ((choice === "team" || choice === "Team") && team >= 1) {
+        alert("Ok! That would be $250!")
+        dollar += 250;
+        lawn +=1;
+    } else if ((choice === "team" || choice === "Team") && team > 1) {
+        alert("Uhhh, hold on a sec.")
+        goToStore();
+    } else if (choice === "nothing" || choice === "Nothing") {
+        alert("Don't be wastin my time!")
+    }
     myAccount();
     }
 }
