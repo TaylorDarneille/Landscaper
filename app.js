@@ -1,31 +1,31 @@
 // the tools object holds all the details about the available tools. To start, user only has teeth
 const TOOLS = {
   teeth: {
-    name: "teeth",
+    name: "Teeth",
     cost: 0,
     revenue: 1,
     has: true
   },
   scissors: {
-    name: "scissors",
+    name: "Scissors",
     cost: 5,
     revenue: 5,
     has: false
   },
   pushmower: {
-    name: "pushmower",
+    name: "Pushmower",
     cost: 25,
     revenue: 50,
     has: false
   },
   lawnmower: {
-    name: "lawnmower",
+    name: "Lawnmower",
     cost: 250,
     revenue: 100,
     has: false
   },
   team: {
-    name: "team",
+    name: "Team",
     cost: 500,
     revenue: 250,
     has: false
@@ -64,7 +64,7 @@ const reset = () =>{
 
 // Called when user hits the "Buy Tool" button
 const buyTool = () => {
-  const toolToBuy = prompt(printToolList(), `scissors / pushmower / lawnmower / team`);
+  const toolToBuy = prompt(printToolList(), `scissors / pushmower / lawnmower / team`).toLowerCase();
   // user enters incorrect entry
   if (!TOOLS[toolToBuy]) {
     alert(`Not a valid entry.\nYou typed ${toolToBuy} and valid entries are: "scissors, pushmower, lawnmower, team"`);
@@ -85,7 +85,7 @@ const buyTool = () => {
     tool = TOOLS[toolToBuy];
     //reduce wallet
     money -= tool.cost;
-    let str = `You have bought ${toolToBuy} and now have $${money}`;
+    let str = `You have bought ${TOOLS[toolToBuy].name} and now have $${money}`;
     updateDom(str);
   }
 }

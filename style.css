@@ -29,3 +29,7 @@ button{
   height: 20px;
   background-color: rgb(10, 97, 45)
 }
+
+#status{
+  padding-top: 10px;
+}
