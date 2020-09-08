@@ -36,9 +36,9 @@ const askForService = () => {
 
 //Scissors cost $5, Pushmower cost $25 there's other choices but the point is to have prompts if you do or don't have enough money
 const goToStore = () => {
-    const choice = prompt("What do you want?", "Scissors, Push Mower, Power Mower, my team, or nothing");
+    const choice = prompt("What do you want?", "Scissors, Pushmower, Powermower, my team, or nothing");
     if ((choice === "scissors" || choice === "Scissors") && dollar >= 5) {
-        alert("These cost $5");
+        alert("These nasty ass scissors cost $5");
         rustyscissors++;
         dollar -= 5;
         myAccount();
@@ -48,13 +48,22 @@ const goToStore = () => {
         //Buy pushmower 
     } else if ((choice === "pushmower" || choice === "Pushmower") && dollar >= 25) {
         alert("That would be $25");
-        rustyscissors++;
+        pushmower++;
         dollar -= 25;
         myAccount();
     } else if ((choice === "pushmower" || choice === "Pushmower") && dollar < 25) {
         alert("You don't have enough for this pushmower you lazy bum!");
         goToStore();
-    }
+        //Buy powermower
+    } else if ((choice === "powermower" || choice === "Powermower") && dollar >= 250) {
+        alert("That would be $250");
+        powermower++;
+        dollar -= 250;
+    } else if ((choice === "powermower" || choice === "Powermower") && dollar < 250) {
+        alert("This too fancy for you, try Sears.");
+        goToStore();
+     
+   
 }
 
 //The point is to see if you have enough money for things other than teeth. Scissors and push mower now available
@@ -78,6 +87,14 @@ const buyService = () => {
     } else if ((choice === "Pushmower" || choice === "pushmower") && pushmower < 1) {
         alert("I guess I need to go to the store!")
         goToStore();
-} 
+    } else if ((choice === "Powermower" || choice === "powermower") && powermower >= 1) {
+        alert("That would be $25");
+        dollar +=100;
+        lawn +=1;
+    } else if ((choice === "Pushmower" || choice === "powermower") && powermower < 1) {
+        alert("I guess I need to go to the store!")
+        goToStore();
+    } 
     myAccount();
+    }
 }
