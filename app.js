@@ -140,7 +140,8 @@ const buyPushMower = () => {
  
  const winner = () => {
     if (boughtStudents === true && money >= 1000){
-   alert("You won the game! You are the best landscaper!")
+   alert("You won the game! You are the best landscaper!\nWould you like to play again?")
+   start()
    }
 }
 
