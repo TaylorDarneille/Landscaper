@@ -125,11 +125,11 @@ const start = () => {
 //Give the user an option to buy scissors
 const landscaper = () => {
   alert('You currently have $' + money)
-  if(money < 5){
-    grassyTeeth()
-  }else if(money >= 5){
-    useScissors()
-  }
+  // if(money < 5){
+  //   grassyTeeth()
+  // }else if(money >= 5){
+  //   useScissors()
+  // }
 }
 
 const grassyTeeth = () => {
@@ -152,16 +152,30 @@ if (choice === 'Yes' || choice === 'yes'){
 //3
 //Once 5 dollars is reached, have an option to buy scissors
 
-const useScissors = () => {
-  let choice = prompt('Do you want buy scissors?', 'Yes/No')
+// const useScissors = () => {
+//   let choice = prompt('Do you want buy scissors?', 'Yes/No')
 
-  if(choice === 'Yes' || choice === 'yes'){
+//   if(choice === 'Yes' || choice === 'yes'){
+//     alert('Wooohoo! You now have scissors to cut the grass with!')
+//     money +=5
+// }else if(choice === 'No' || choice ==='no'){
+//   alert('Suit yourself!')
+//   }
+// }
+
+const toolStore = () => {
+  let store = prompt('What would you like to buy?', 'Scissors / Lawnmower / Fancy Lawnmower / Hire starving students')
+  if((store === 'Scissors' || store === 'scissors') && money >= 5){//code 5 dollars somewhere so it knows
     alert('Wooohoo! You now have scissors to cut the grass with!')
-    money -=5
-}else if(choice === 'No' || choice ==='no'){
-  alert('Suit yourself!')
+}else if((store === 'Lawnmower' || store === 'lawnmower') && money >= 25){
+    alert('You got yourself a mower to cut grass with!')
+}else if((store === 'Fancy Lawnmower' || store === 'fancy lawnmower') && money >= 250){
+    alert('Thats a fine mower you gou got here!')
+}else if((store === 'Hire starving students' || store === 'hire starving students') && money >= 500){
+    alert('These students are hungry, but they can work!')
   }
 }
+
 //4
  //Make 5 dollars a day using scissors
 
