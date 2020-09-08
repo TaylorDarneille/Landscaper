@@ -7,14 +7,53 @@
 </head>
 <body>
     <div id="tools">
-        <button id="teeth">
-        teeth
-        </button>
-    </div>  
-    <div id="bank">
-        
+        <div class="teeth">
+            <p>Teeth</p>
+            <button id="use-teeth">
+                use
+            </button>
+        </div>
+        <div class="scissors">
+            <p>Rusty Scissors</p>
+            <button id="buy-rusty-scissors" disabled> 
+                buy
+            </button>
+            <button id="use-rusty-scissors" disabled> 
+                use
+            </button>
+        </div>
+        <div class="old-lawnmower">
+            <p>Old Timey Lawnmower</p>
+            <button id="buy-old-lawnmower" disabled>
+                buy
+            </button>
+            <button id="use-timey-lawnmower" disabled>
+                use
+            </button>
+        </div>
+        <div class="old-lawnmower">
+            <p>Battery Powered Lawnmower</p>
+            <button id="buy-battery-powered-lawnmower" disabled>
+                buy
+            </button>
+            <button id="use-battery-powered-lawnmower" disabled>
+                use
+            </button>
+        </div>
+        <div class="old-lawnmower">
+            <p>Starving Students</p>
+            <button id="hire-team-starving-students" disabled>
+                buy
+            </button>
+            <button id="use-team-starving-students" disabled>
+                use
+            </button>
+        </div>
     </div>
-    <p id="test">This is a test</p>
+
+    <p>
+      Bank Balance: $<span id="bank"></span>  
+    </p>
     <script src="app.js"></script>
 </body>
 </html>
