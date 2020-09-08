@@ -1,0 +1,19 @@
+
+
+body {
+    background-image: url('https://i.imgur.com/lj9s6vB.jpg');
+    background-size: cover;
+}
+
+button {
+    padding: 10px;
+    margin-left: 30px;
+    color: black;
+    background-color: white;
+}
+
+h1, h3 {
+ color: grey;
+ margin-left: 30px;
+ font-family: 'Noto Sans JP', sans-serif;
+}
