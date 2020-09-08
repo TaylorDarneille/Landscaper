@@ -1,11 +1,14 @@
 let bank = 0;
 const balanceHTMLElement = document.getElementById("bank");
 function checker(tools) {
-    if (bank >= 5 && tools.rustyScissors.quantity < tools.rustyScissors.limit) {
+    if (bank >= tools.rustyScissors.buy.cost && tools.rustyScissors.quantity < tools.rustyScissors.limit) {
         tools.rustyScissors.buy.element.disabled = false;
     }
-    if (bank >= 25 && tools.rustyScissors.quantity > 0) {
+    if (bank >= tools.oldTimeyLawnmower.buy.cost && tools.rustyScissors.quantity > 0) {
         tools.oldTimeyLawnmower.buy.element.disabled = false;
+    }
+    if (bank >= tools.poweredLawnmower.buy.cost && tools.oldTimeyLawnmower.quantity > 0) {
+        tools.poweredLawnmower.buy.element.disabled = false;
     }
 
 
@@ -17,6 +20,10 @@ function checker(tools) {
     if (tools.oldTimeyLawnmower.quantity === tools.oldTimeyLawnmower.limit) {
         tools.oldTimeyLawnmower.buy.element.disabled = true;
         tools.oldTimeyLawnmower.use.element.disabled = false;
+    }
+    if (tools.poweredLawnmower.quantity === tools.poweredLawnmower.limit) {
+        tools.poweredLawnmower.buy.element.disabled = true;
+        tools.poweredLawnmower.use.element.disabled = false;
     }
     
 }
@@ -124,9 +131,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     tools.oldTimeyLawnmower.buy.element.addEventListener("click", function(event) {
         tools.oldTimeyLawnmower.quantity += 1;
-        decreaseBankBalance(tools.rustyScissors.buy.cost, tools);
+        decreaseBankBalance(tools.oldTimeyLawnmower.buy.cost, tools);
     });
     tools.oldTimeyLawnmower.use.element.addEventListener("click", function(event) {
         increaseBankBalance(tools.oldTimeyLawnmower.use.servicePrice, tools);
+    });
+    tools.poweredLawnmower.buy.element.addEventListener("click", function(event) {
+        tools.poweredLawnmower.quantity += 1;
+        decreaseBankBalance(tools.poweredLawnmower.buy.cost, tools);
     });
 });
