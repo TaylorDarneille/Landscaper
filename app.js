@@ -37,49 +37,52 @@ const showStatus = () => {
 const askForAction = () => {
     showStatus(); //you have 0, work harder
     const userInput = prompt(
-      "do you want to cut grass with your teeth? You can earn $1!"
+      "do you want to cut grass with your teeth? You can earn $1!", "yes or no"
     ); //option to work
     if (userInput === "yes") {
       bank = bank + 1; //or bank++   also adds 1
       daysOfWork = daysOfWork + 1;
-      if (bank >= 5) {
-        prompt("do you want to buy scissors for $5?");
-        if (userInput === "yes") {
-          bank = bank - 5;
-          alert("HAVE FUN USING YOUR SCISSORS!");
-        } else if (userInput === "no") {
+      if (bank >= 5) {   //run this until this condition is met.
+        prompt("do you want to buy scissors for $5?", "yes or no"); //once it is met, notifty user
+       if (userInput === "yes") {
+         bank = bank-5;  //update the bank
+          alert("HAVE FUN USING YOUR SCISSORS!"),
+           useScissors(); //go to another functionn otherwise Jv will read the lines below
+        } else (userInput === "no"); {
           bank = bank
-          prompt(
+          alert(
             "Have fun using your teeth, you have $" +
               bank +
-              "left. Do you want to keep cutting grass with your teeth?"
+              " left." 
           )
-         return keepPlaying();
-        }
-        // if (userInput === "yes") {
-        //   bank = bank + 1;
-        //   daysOfWork = daysOfWork + 1;
-        // } else if (userInput === "no") {
-        //   bank = bank;
-        //   alert("you have $" + bank); //notify player that they earned a dollar
-        // }
       }
-    } else if (userInput === "no") {
+        } 
+    }else if (userInput === "no") {
       alert("game over");
     }
     askForAction();
   };
 
+
+
+
 const keepPlaying = () => {
-    prompt("you have"+ bank + "do you want to keep playing?")
+    prompt("you have $"+ bank + " do you want to keep playing?", "yes please or not now")
     {
-        if (userInput === "yes") {
-            bank = bank + 1;
-            daysOfWork = daysOfWork + 1;
-          } else if (userInput === "no") {
-            alert("game over"); //notify player that they earned a dollar
+        if (userInput === "yes please") {
+           askForAction()
+          } else if (userInput === "not now") {
+            alert("game over"); 
           }
     }
+}
+
+
+
+const useScissors = () => {
+    showStatus(),
+    prompt("You are now using fancy scissorrs, do you want to cut grass for $5?", "yes or no");
+
 }
 
 
