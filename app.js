@@ -59,11 +59,22 @@ const goToStore = () => {
         alert("That would be $250");
         powermower++;
         dollar -= 250;
+        myAccount();
     } else if ((choice === "powermower" || choice === "Powermower") && dollar < 250) {
         alert("This too fancy for you, try Sears.");
         goToStore();
-        
-     
+    } else if ((choice === "team" || choice === "Team") && dollar >= 500) {
+        alert("That would be $500");
+        team++;
+        dollar -= 500;
+        myAccount();
+    } else if ((choice === "team" || choice === "Team") && dollar < 500) {
+        alert("You're too much of a loser to have a team, try again later!");
+        goToStore();
+    } else if (choice === "nothing" || choice === "Nothing") {
+        alert("Well what are you doing here then?!");
+        myAccount();
+    }   
    
 }
 
@@ -106,5 +117,5 @@ const buyService = () => {
         alert("Don't be wastin my time!")
     }
     myAccount();
-    }
 }
+
