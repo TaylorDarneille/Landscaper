@@ -120,4 +120,15 @@ const useLawnmowerTwo = () => {
         useStarvingStudents()
     }
 }
+const getStarvingStudents = () => {
+    let gettingStarvingStudents = prompt("Do you want to buy a battery powered Lawnmower?","Yes or No")
+    if (gettingStarvingStudents === "Yes"){
+        money -= 500
+        starvingStudents = true 
+        alert("Money: $"+ money+" || You have a group of starving students")
+          useLawnmowerTwo()
+      }else if (gettingStarvingStudents === "No"){
+          useLawnmowerTwo()
+    }
+}
 start()
