@@ -1,6 +1,7 @@
 let money = 5 ;
 let rustyScissor = false;
 let lawnmower = false;
+let lawnmowerBattery = false;
 
 const start = () => {
     useTeeth()
@@ -70,23 +71,35 @@ const getLawnmower = () => {
 }
 
 const useLawnmower = () => {
-    //while( lawnmower === false){
+    while( lawnmowerBattery === false){
         let usingLawnmower = prompt("Want to spend the day cutting grass with your lawnmower?","Yes or No")
-        if (usingLawnmower === "Yes" && (money > 25 || money < 25)){
+        if (usingLawnmower === "Yes" && (money > 250 || money < 250)){
           money += 50
           alert("Money: $"+ money)
           useLawnmower()
-          //}else if (usingLawnmower=== "Yes" && money === 50){
-                //("Money: $"+ money+" || You have a pair of rusty scissors")
-               //getLawnmower()
+          }else if (usingLawnmower=== "Yes" && money === 250){
+                ("Money: $"+ money+" || You have a lawnmower")
+               getLawnmowerTwo()
            } else if ( usingLawnmower === "No"){
                useLawnmower()
     
             }
-       // }
-        //if ( lawnmower === true){
-            //useLawnmower()
-        //}
+       }
+        if ( lawnmowerBattery === true){
+            useLawnmowerTwo()
+        }
 }
+const getLawnmowerTwo = () => {
+    let gettingLandmowerTwo = prompt("Do you want to buy a battery powered Lawnmower?","Yes or No")
+    if (gettingLandmowerTwo === "Yes"){
+        money -= 250
+        lawnmowerBattery = true 
+        alert("Money: $"+ money+" || You have a battery powered lawnmower")
+          useLawnmowerTwo()
+      }else if (gettingLandmowerTwo === "No"){
+          useLawnmower()
+    }
+}
+
 
 start()
