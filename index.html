@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Landscaper Game</h2>
+    <div id="tools">
+        <div class="teeth">
+            <p>Teeth</p>
+            <button id="use-teeth">
+                use
+            </button>
+        </div>
+        <div class="scissors">
+            <p>Rusty Scissors</p>
+            <button id="buy-rusty-scissors" disabled> 
+                buy
+            </button>
+            <button id="use-rusty-scissors" disabled> 
+                use
+            </button>
+        </div>
+        <div class="old-lawnmower">
+            <p>Old Timey Lawnmower</p>
+            <button id="buy-old-lawnmower" disabled>
+                buy
+            </button>
+            <button id="use-old-lawnmower" disabled>
+                use
+            </button>
+        </div>
+        <div class="old-lawnmower">
+            <p>Battery Powered Lawnmower</p>
+            <button id="buy-battery-powered-lawnmower" disabled>
+                buy
+            </button>
+            <button id="use-battery-powered-lawnmower" disabled>
+                use
+            </button>
+        </div>
+        <div class="old-lawnmower">
+            <p>Starving Students</p>
+            <button id="hire-team-starving-students" disabled>
+                buy
+            </button>
+            <button id="use-team-starving-students" disabled>
+                use
+            </button>
+        </div>
+    </div>
+
+    <p>
+      Bank Balance: $<span id="bank"></span>  
+    </p>
+    <br>
+    <div>
+        <button id="restart">Restart Game</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
