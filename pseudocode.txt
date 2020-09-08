@@ -6,9 +6,6 @@ app must have:
 3. ability to buy tools -- every tool declared as a variable (in case we do the bonus challenge)
 4. ability to win the game and end it -- conditional statement if user has certain amount of money AND certain tool, game ends and prompt ends
 
-THOUGHTS
-
-while loop? so the prompt keeps going until a certain condition is met -- if money is NOT $1000 and team is equal to 0 or less 
 
 VARIABLES
 
@@ -18,19 +15,6 @@ scissors = 0
 oldLawnmower = 0
 newLawnmower = 0
 team = 0
-
-* booleans:
-hasScissors = false
-hasOldLawnmower = false
-hasNewLawnmower = false 
-hasTeam = false 
-
-* arrays:
-tools = []
-
-BOOLEANS 
-
-if 
 
 
 STAGES OF GAME 

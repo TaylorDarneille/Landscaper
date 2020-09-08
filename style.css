@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+body {
+    font-family: 'Gaegu', serif;
+    background-color: #a9ba9d;
+    color: #462e1a;
+}
+.container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+img {
+    width: 70%;
+}
