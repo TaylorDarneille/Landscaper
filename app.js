@@ -104,4 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         tools.rustyScissors.quantity += 1;
         decreaseBankBalance(tools.rustyScissors.buy.cost, tools);
     });
+    tools.rustyScissors.use.element.addEventListener("click", function(event) {
+        increaseBankBalance(tools.rustyScissors.use.servicePrice, tools);
+    });
 });
