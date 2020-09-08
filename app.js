@@ -36,38 +36,49 @@ const showStatus = () => {
 
 const askForAction = () => {
     showStatus(); //you have 0, work harder
-    const userInput = prompt(
-      "do you want to cut grass with your teeth? You can earn $1!", "yes or no"
-    ); //option to work
+    const userInput = prompt("do you want to cut grass with your teeth? You can earn $1!", "yes or no"); //option to work
     if (userInput === "yes") {
       bank = bank + 1; //or bank++   also adds 1
-      daysOfWork = daysOfWork + 1;
-      if (bank >= 5) {   //run this until this condition is met.
-        prompt("do you want to buy scissors for $5?", "yes or no"); //once it is met, notifty user
-       if (userInput === "yes") {
-         bank = bank-5;  //update the bank
-          alert("HAVE FUN USING YOUR SCISSORS!"),
-           useScissors(); //go to another functionn otherwise Jv will read the lines below
-        } else (userInput === "no"); {
-          bank = bank
-          alert(
-            "Have fun using your teeth, you have $" +
-              bank +
-              " left." 
-          )
-      }
-        } 
-    }else if (userInput === "no") {
+      daysOfWork = daysOfWork + 1;}
+      if (bank >= 5) {
+          askForUpgrade(); }
+          //run this until this condition is met. //I think insteaf of an if, I should hhave made another function
+    //   prompt("do you want to buy scissors for $5?", "yes or no"); //once it is met, notifty user
+    //    if (userInput === "yes") {
+    //      bank = bank-5;  //update the bank
+    //       alert("HAVE FUN USING YOUR SCISSORS!"),
+    //        useScissors(); //go to another functionn otherwise Jv will read the lines below
+    //     } else if (userInput === "no"); {
+    //       bank = bank
+    //       alert(
+    //         "Have fun using your teeth, you have $" +
+    //           bank +
+    //           " left." 
+    //       )
+    else if (userInput === "no") {
       alert("game over");
     }
     askForAction();
-  };
+  }
 
 
-
+  const askForUpgrade= () => {
+      userInput= prompt("do you want to buy rusty scissors for $5", "yes or no");
+        if (userInput === "yes") {
+        bank = bank-5;  //update the bank
+        alert("HAVE FUN USING YOUR SCISSORS!"),
+        useScissors(); //go to another functionn otherwise Jv will read the lines below
+        } else if (userInput === "no"); {
+        bank = bank
+        alert(
+       "Have fun using your teeth, you have $" +
+         bank +
+         " left.") 
+        }
+    }
 
 const keepPlaying = () => {
-    prompt("you have $"+ bank + " do you want to keep playing?", "yes please or not now")
+   userInput= prompt("you have $"+ bank + " do you want to keep playing?", "yes please or not now");
     {
         if (userInput === "yes please") {
            askForAction()
@@ -81,10 +92,14 @@ const keepPlaying = () => {
 
 const useScissors = () => {
     showStatus(),
-    prompt("You are now using fancy scissorrs, do you want to cut grass for $5?", "yes or no");
-
+  userInput= prompt("You are now using rusty scissorrs, do you want to cut grass for $5?", "yes or no");
+    if (userInput === "yes") {
+        bank = bank + 5; 
+        alert("you made $5")
+} else if(userInput==="no"){
+    alert("game over");
 }
-
+}
 
 start();
 
