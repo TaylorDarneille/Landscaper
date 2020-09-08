@@ -85,7 +85,7 @@ const askForAction = () => {
           bank = bank + 5; //or bank++   also adds 1
           alert("you made $5")
           if (bank >= 25) {
-           askForUpgradeLawn()
+            askForUpgradeLawn(); }
         } else if(userInput==="no"){
             alert("game over");
         }
@@ -98,8 +98,9 @@ const askForAction = () => {
             userInput= prompt("do you want to buy a lawnmower for $25", "yes or no");
               if (userInput === "yes") {
               bank = bank-25;  //update the bank
-              alert("HAVE FUN USING YOUR SCISSORS!"),
-              useScissors(); //go to another functionn otherwise Jv will read the lines below
+              alert("have fun with your lawnmower!")
+              useLawn();
+             // useScissors(); //go to another functionn otherwise Jv will read the lines below
               } else if (userInput === "no"); {
               bank = bank
               alert(
@@ -108,6 +109,7 @@ const askForAction = () => {
                " left.") 
               }
           }
+
 
 // const keepPlaying = () => {
 //    userInput= prompt("you have $"+ bank + " do you want to keep playing?", "yes please or not now");
@@ -204,6 +206,4 @@ start();
 // const askForUpgrade = prompt("Do you want rusty scisccors for $5?")
 
 // const upgrade = () => {
-//     bank >= 5 {
-
-//     
+//     bank >= 5
