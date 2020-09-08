@@ -72,7 +72,6 @@ const buyTool = () => {
   // user already has this tool
   else if (TOOLS[toolToBuy].has) {
     alert(`You already have ${toolToBuy}`);
-    console.log(TOOLS)
   }
   // user has insufficient funds
   else if (TOOLS[toolToBuy].cost > money) {
