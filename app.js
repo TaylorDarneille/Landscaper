@@ -163,4 +163,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     tools.starvingStudents.use.element.addEventListener("click", function(event) {
         increaseBankBalance(tools.starvingStudents.use.servicePrice, tools);
     });
+
+    // restart event handler, when user click the restart button, a meesage will
+    // be sent to the user informing him that the game is about to restart
+    // after the user confirms by clicking ok, the page will refresh
+    document.getElementById("restart").addEventListener("click", function(event){
+        alert("Restarting game... Click Ok");
+        location.reload();
+    });
 });
