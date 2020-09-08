@@ -77,31 +77,67 @@ const askForAction = () => {
         }
     }
 
-const keepPlaying = () => {
-   userInput= prompt("you have $"+ bank + " do you want to keep playing?", "yes please or not now");
-    {
-        if (userInput === "yes please") {
-           askForAction()
-          } else if (userInput === "not now") {
-            alert("game over"); 
+
+    const useScissors = () => {
+        showStatus();
+        userInput= prompt("You are now using rusty scissorrs, do you want to cut grass for $5?", "yes or no");
+        if (userInput === "yes") {
+          bank = bank + 5; //or bank++   also adds 1
+          alert("you made $5")
+          if (bank >= 25) {
+           askForUpgradeLawn()
+        } else if(userInput==="no"){
+            alert("game over");
+        }
+        useScissors();
+        }
+
+
+
+        const askForUpgradeLawn= () => {
+            userInput= prompt("do you want to buy a lawnmower for $25", "yes or no");
+              if (userInput === "yes") {
+              bank = bank-25;  //update the bank
+              alert("HAVE FUN USING YOUR SCISSORS!"),
+              useScissors(); //go to another functionn otherwise Jv will read the lines below
+              } else if (userInput === "no"); {
+              bank = bank
+              alert(
+             "Have fun using your scissors, you have $" +
+               bank +
+               " left.") 
+              }
           }
-    }
-}
+
+// const keepPlaying = () => {
+//    userInput= prompt("you have $"+ bank + " do you want to keep playing?", "yes please or not now");
+//     {
+//         if (userInput === "yes please") {
+//            askForAction()
+//           } else if (userInput === "not now") {
+//             alert("game over"); 
+//           }
+//     }
+// }
 
 
 
-const useScissors = () => {
-    showStatus(),
-  userInput= prompt("You are now using rusty scissorrs, do you want to cut grass for $5?", "yes or no");
-    if (userInput === "yes") {
-        bank = bank + 5; 
-        alert("you made $5")
-} else if(userInput==="no"){
-    alert("game over");
-}
-}
+// const useScissors = () => {
+//     showStatus(),
+//   userInput= prompt("You are now using rusty scissorrs, do you want to cut grass for $5?", "yes or no");
+//     if (userInput === "yes") {
+//         bank = bank + 5; 
+//         alert("you made $5")
+// } else if(userInput==="no"){
+//     alert("game over");
+// }
+// }
 
 start();
+
+
+
+
 
 // function nextDay {
 //     if 
