@@ -1,19 +1,34 @@
 let bank = 0;
 const balanceHTMLElement = document.getElementById("bank");
-function increaseBankBalance(amountOfMoney, tools) {
-    bank = bank + amountOfMoney;
-    balanceHTMLElement.innerHTML = bank;
+function checker(tools) {
     if (bank >= 5 && tools.rustyScissors.quantity < tools.rustyScissors.limit) {
         tools.rustyScissors.buy.element.disabled = false;
     }
-}
-function decreaseBankBalance(amountOfMoney, tools) {
-    bank = bank - amountOfMoney;
-    balanceHTMLElement.innerHTML = bank;
+    if (bank >= 25 && tools.rustyScissors.quantity > 0) {
+        tools.oldTimeyLawnmower.buy.element.disabled = false;
+    }
+
+
+    // if conditions that apply to disabling by limit
     if (tools.rustyScissors.quantity === tools.rustyScissors.limit) {
         tools.rustyScissors.buy.element.disabled = true;
         tools.rustyScissors.use.element.disabled = false;
     }
+    if (tools.oldTimeyLawnmower.quantity === tools.oldTimeyLawnmower.limit) {
+        tools.oldTimeyLawnmower.buy.element.disabled = true;
+        tools.oldTimeyLawnmower.use.element.disabled = false;
+    }
+    
+}
+function increaseBankBalance(amountOfMoney, tools) {
+    bank = bank + amountOfMoney;
+    balanceHTMLElement.innerHTML = bank;
+    checker(tools);
+}
+function decreaseBankBalance(amountOfMoney, tools) {
+    bank = bank - amountOfMoney;
+    balanceHTMLElement.innerHTML = bank;
+    checker(tools);
 }
 document.addEventListener("DOMContentLoaded", function(event) {   
     balanceHTMLElement.innerHTML = bank;
@@ -53,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         },
         oldTimeyLawnmower: {
             use: {
-                element:useOldTimeyLawnmower,
+                element: useOldTimeyLawnmower,
                 isDisabled: true,
                 servicePrice: 50,
             },
@@ -106,5 +121,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
     tools.rustyScissors.use.element.addEventListener("click", function(event) {
         increaseBankBalance(tools.rustyScissors.use.servicePrice, tools);
+    });
+    tools.oldTimeyLawnmower.buy.element.addEventListener("click", function(event) {
+        tools.oldTimeyLawnmower.quantity += 1;
+        decreaseBankBalance(tools.rustyScissors.buy.cost, tools);
     });
 });
