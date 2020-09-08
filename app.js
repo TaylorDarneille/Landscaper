@@ -153,4 +153,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         tools.starvingStudents.quantity += 1;
         decreaseBankBalance(tools.starvingStudents.buy.cost, tools);
     });
+    tools.starvingStudents.use.element.addEventListener("click", function(event) {
+        increaseBankBalance(tools.starvingStudents.use.servicePrice, tools);
+    });
 });
