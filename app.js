@@ -111,6 +111,56 @@ const askForAction = () => {
           }
 
 
+          const useLawn = () => {
+            showStatus();
+            userInput= prompt("You are now using a lawnmower, do you want to cut grass for $50?", "yes or no");
+            if (userInput === "yes") {
+              bank = bank + 50; //or bank++   also adds 1
+              alert("you made $50")}
+              if (bank >= 250) {
+                 askForElectric();
+              //  askForUpgradeElectric(); }
+            } else if(userInput==="no"){
+                alert("game over");
+            }
+            useLawn();
+            }
+
+            const askForElectric= () => {
+                userInput= prompt("do you want to buy electric lawnmower for $250", "yes or no");
+                  if (userInput === "yes") {
+                  bank = bank-250;  //update the bank
+                  alert("HAVE FUN USING YOUR FANCY LAWNMOWER!"),
+                  useElectric(); //go to another functionn otherwise Jv will read the lines below
+                  } else if (userInput === "no"); {
+                  bank = bank
+                  alert(
+                 "Have fun using your REGULAR lawnmower, you have $" +
+                   bank +
+                   " left.") 
+                  }
+              }
+
+
+              const useElectric = () => {
+                showStatus();
+                userInput= prompt("You are now using an electric mower, do you want to cut grass for $100?", "yes or no");
+                if (userInput === "yes") {
+                  bank = bank + 100; //or bank++   also adds 1
+                  alert("you made $100")}
+                  if (bank >= 500) {
+                     alert("working")
+                  //  askForUpgrade
+                } else if(userInput==="no"){
+                    alert("game over");
+                }
+                useElectric();
+                }
+
+
+
+                
+
 // const keepPlaying = () => {
 //    userInput= prompt("you have $"+ bank + " do you want to keep playing?", "yes please or not now");
 //     {
