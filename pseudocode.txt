@@ -1,0 +1,34 @@
+upgrade from $1 teeth to $5 scissors to
+$25 push mower to $100 power mower to $250 team
+
+prompt that user offers service
+to cut grass
+
+user can got to store buy scissors 
+for $5 to cut grass
+
+user buys scissors
+
+use scissors to cut grass
+
+user gets a push mower for $25
+
+user can buy push mower
+
+cut lawns with push mower for $50
+
+buy fancy battery-powered 
+lawnmower for $250
+
+get $100 for each lawn with 
+battery-powered mower
+
+hire team for $500
+
+cut lawns for $250
+
+you win the game when you have a team
+and $1000
+
+
+
