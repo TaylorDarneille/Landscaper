@@ -140,4 +140,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         tools.poweredLawnmower.quantity += 1;
         decreaseBankBalance(tools.poweredLawnmower.buy.cost, tools);
     });
+    tools.poweredLawnmower.use.element.addEventListener("click", function(event) {
+        increaseBankBalance(tools.poweredLawnmower.use.servicePrice, tools);
+    });
 });
