@@ -65,15 +65,12 @@ const askForAction = () => {
   const askForUpgrade= () => {
       userInput= prompt("do you want to buy rusty scissors for $5", "yes or no");
         if (userInput === "yes") {
-        bank = bank-5;  //update the bank
-        alert("HAVE FUN USING YOUR SCISSORS!"),
-        useScissors(); //go to another functionn otherwise Jv will read the lines below
-        } else if (userInput === "no"); {
-        bank = bank
-        alert(
-       "Have fun using your teeth, you have $" +
-         bank +
-         " left.") 
+            bank = bank-5;  //update the bank
+            alert("HAVE FUN USING YOUR SCISSORS!"),
+            useScissors(); //go to another functionn otherwise Jv will read the lines below
+     }  else if (userInput === "no"); {
+            bank = bank
+            alert("Have fun using your teeth, you have $" + bank + " left.") 
         }
     }
 
@@ -81,84 +78,101 @@ const askForAction = () => {
     const useScissors = () => {
         showStatus();
         userInput= prompt("You are now using rusty scissorrs, do you want to cut grass for $5?", "yes or no");
-        if (userInput === "yes") {
-          bank = bank + 5; //or bank++   also adds 1
-          alert("you made $5")
+            if (userInput === "yes") {
+                bank = bank + 5; //or bank++   also adds 1
+                alert("you made $5")
           if (bank >= 25) {
-            askForUpgradeLawn(); }
+                askForUpgradeLawn(); }
         } else if(userInput==="no"){
-            alert("game over");
+                alert("game over");
         }
         useScissors();
         }
 
 
 
-        const askForUpgradeLawn= () => {
-            userInput= prompt("do you want to buy a lawnmower for $25", "yes or no");
-              if (userInput === "yes") {
-              bank = bank-25;  //update the bank
-              alert("have fun with your lawnmower!")
-              useLawn();
-             // useScissors(); //go to another functionn otherwise Jv will read the lines below
-              } else if (userInput === "no"); {
-              bank = bank
-              alert(
-             "Have fun using your scissors, you have $" +
-               bank +
-               " left.") 
-              }
-          }
-
-
-          const useLawn = () => {
-            showStatus();
-            userInput= prompt("You are now using a lawnmower, do you want to cut grass for $50?", "yes or no");
-            if (userInput === "yes") {
-              bank = bank + 50; //or bank++   also adds 1
-              alert("you made $50")}
-              if (bank >= 250) {
-                 askForElectric();
-              //  askForUpgradeElectric(); }
-            } else if(userInput==="no"){
-                alert("game over");
-            }
+const askForUpgradeLawn= () => {
+    userInput= prompt("do you want to buy a lawnmower for $25", "yes or no");
+        if (userInput === "yes") {
+            bank = bank-25;  //update the bank
+            alert("have fun with your lawnmower!")
             useLawn();
+        // useScissors(); //go to another functionn otherwise Jv will read the lines below
+    } else if (userInput === "no"); {
+            bank = bank
+            alert("Have fun using your scissors, you have $" + bank + " left.") 
+        }
+    }
+
+
+    const useLawn = () => {
+        showStatus();
+        userInput= prompt("You are now using a lawnmower, do you want to cut grass for $50?", "yes or no");
+            if (userInput === "yes") {
+                bank = bank + 50; //or bank++   also adds 1
+                alert("you made $50")}
+            if (bank >= 250) {
+                askForElectric();
+            //  askForUpgradeElectric(); }
+    } else if(userInput==="no"){
+            alert("game over");
+    }
+    useLawn();
+    }
+
+    const askForElectric= () => {
+        userInput= prompt("do you want to buy electric lawnmower for $250", "yes or no");
+            if (userInput === "yes") {
+                bank = bank-250;  //update the bank
+                alert("HAVE FUN USING YOUR FANCY LAWNMOWER!"),
+                useElectric(); //go to another functionn otherwise Jv will read the lines below
+        } else if (userInput === "no"); {
+                 bank = bank
+                alert( "Have fun using your REGULAR lawnmower, you have $" + bank +" left.") 
             }
-
-            const askForElectric= () => {
-                userInput= prompt("do you want to buy electric lawnmower for $250", "yes or no");
-                  if (userInput === "yes") {
-                  bank = bank-250;  //update the bank
-                  alert("HAVE FUN USING YOUR FANCY LAWNMOWER!"),
-                  useElectric(); //go to another functionn otherwise Jv will read the lines below
-                  } else if (userInput === "no"); {
-                  bank = bank
-                  alert(
-                 "Have fun using your REGULAR lawnmower, you have $" +
-                   bank +
-                   " left.") 
-                  }
-              }
+        }
 
 
-              const useElectric = () => {
-                showStatus();
-                userInput= prompt("You are now using an electric mower, do you want to cut grass for $100?", "yes or no");
-                if (userInput === "yes") {
-                  bank = bank + 100; //or bank++   also adds 1
-                  alert("you made $100")}
-                  if (bank >= 500) {
-                     alert("working")
-                  //  askForUpgrade
-                } else if(userInput==="no"){
-                    alert("game over");
-                }
-                useElectric();
+    const useElectric = () => {
+        showStatus();
+        userInput= prompt("You are now using an electric mower, do you want to cut grass for $100?", "yes or no");
+            if (userInput === "yes") {
+                bank = bank + 100; //or bank++   also adds 1
+                    alert("you made $100")}
+            if (bank >= 500) {
+                upgradeToStudents();
+                //  askForUpgrade
+            } else if(userInput==="no"){
+                 alert("game over");
+                    }
+            useElectric();
                 }
 
+    const upgradeToStudents= () => {
+        userInput= prompt("do you want to hire students for $500?", "yes or no");
+            if (userInput === "yes") {
+                bank = bank-500;  //update the bank, minus the cost
+                alert("HAVE FUN WITH YOUR SQUAD"), //let them know the change was accepted
+                useStudents(); //go to another functionn otherwise Jv will read the lines below
+         } else if (userInput === "no"); {
+                bank = bank  //no changes made to the bank
+             alert( "Have fun using your electric lawnmower, you have $" + bank + " left.") //notifies user it didnt upgrade
+            }
+        }
 
-
+    const useStudents = () => {
+        showStatus();
+        userInput= prompt("You are now using a team of students, do you want to cut grass for $500?", "yes or no");
+        if (userInput === "yes") {
+            bank = bank + 500; //or bank++   also adds 1
+            alert("you made $500")}
+        if (bank >= 1000) {
+            alert("YOU WIN, GAME OVER")
+    }   else if(userInput==="no"){
+        alert("game over");
+    }
+    useStudents();
+    }
                 
 
 // const keepPlaying = () => {
