@@ -6,7 +6,7 @@ const start = () => {
   startCutting();
 };
 
-//Start the landscaping game
+//Landscaping game
 const  startCutting = () => {
   money++;  
   const go = alert("Let's use your teeth to begin cutting!");
@@ -32,19 +32,32 @@ const  startCutting = () => {
             stop();
         }  
     }
-  // buy lawnmower 
+  // Buy Lawnmower 
   while(money<50){
-        const buyLawnmower = prompt("You now have $" + money + "! Would you like to buy a lawn mower to help you cut the grass!", "Yes or No?");
-            if (buyLawnmower === "Yes" || buyLawnmower === "yes") {
-                lawnmower();
-                break;
-            } else if (buyLawnmower === "No" || buyLawnmower === "no") {
-                keepScissors();
+    const buyLawnmower = prompt("You now have $" + money + "! Would you like to buy a lawn mower to help you cut the grass!", "Yes or No?");
+        if (buyLawnmower === "Yes" || buyLawnmower === "yes") {
+            lawnmower();
+            break;
+        } else if (buyLawnmower === "No" || buyLawnmower === "no") {
+            keepScissors();
+        } else {
+            stop();
+        }  
+    }
+    // Buy battery-powered lawnmower
+  while(money<500){
+        const buyBatteryMower = prompt("You now have $" + money + "! Would you like to buy a battery mower to help you cut the grass!", "Yes or No?");
+            if (buyBatteryMower === "Yes" || buyBatteryMower === "yes") {
+                batteryMower();
+            } else if (buyBatteryMower === "No" || buyBatteryMower === "no") {
+                keepMower();
             } else {
                 stop();
-            }  
-        }
+            }
+     } 
 }  
+
+///////// ========================== IF NO =========================== ////////////////
 
 // Stop cutting
 const stop = () => {
@@ -53,9 +66,15 @@ const stop = () => {
         alert ("Tired of using your teeth, huh? You finished with $" + money);
         start();
     } else{
-        keepTeeth();
+        if (money<5) {
+            startCutting();
+        } else if (money<25){
+            keepTeeth();
+        } else {
+            keepMower();
+        }
     }
-}
+}    
 
 //Unlimited teeth cutting
 const keepTeeth = () => {
@@ -70,9 +89,41 @@ const keepTeeth = () => {
     }
 }
 
+//Unlimited scissor cutting
+const keepScissors = () => {
+    let y = money+5;
+    const buyLawnmower = prompt("You now have $" + y + "! Would you like to buy a lawn mower to help you cut the grass!", "Yes or No?");
+    if (buyLawnmower === "Yes" || buyLawnmower === "yes") {
+     lawnmower();
+    } else if (buyLawnmower=== "No" || buyLawnmower === "no") {
+        let money = y;
+        y = money + 5;
+        keepScissors();
+    }  else {
+     stop();
+    }
+}
+
+//Unlimited push mower cutting
+const keepMower = () => {
+    let y = money+5;
+    const buyBatteryMower = prompt("You now have $" + y + "! Would you like to buy a battery mower to help you cut the grass!", "Yes or No?");
+    if (buyBatteryMower === "Yes" || buyBatteryMower === "yes") {
+     batteryMower();
+    } else if (buyBatteryMower=== "No" || buyBatteryMower === "no") {
+        let y = money + 5;
+        money = y;
+        keepMower();
+    }  else {
+     stop();
+    }
+}
+
+///////// ========================== IF YES =========================== ////////////////
+
 //Scissor cutting
 const scissors = () => {
-    const cut = alert("Let's use your scissors to cut the grass!");
+    const cut = alert("Let's use your scissors to cut the grass! You get $5 per cut.");
     while(money < 25){
         let y = money+5;
         alert("Great! You now have $" + y);
@@ -86,26 +137,14 @@ const scissors = () => {
     }   
 }
 
-//Unlimited scissor cutting
-const keepScissors = () => {
-    let y = money+5;
-    const buyLawnmower = prompt("You now have $" + y + "! Would you like to buy a lawn mower to help you cut the grass!", "Yes or No?");
-    if (buyLawnmower === "Yes" || buyLawnmower === "yes") {
-     lawnmower();
-    } else if (buyLawnmower=== "No" || buyLawnmower === "no") {
-        let y = money + 5;
-        money = y;
-        keepScissors();
-    }  else {
-     stop();
-    }
-}
-
+// Lawnmower cutting
 const lawnmower = () => {
-    const mow = alert("Let's use your lawn mower to cut the grass!");
     alert("Great! You now have $" + money);
+    const mow = alert("Let's use your lawn mower to cut the grass! You get $50 per cut.");
+    y = money +50;
+    alert("Great! You now have $" + y);
     const moreMoney = prompt("Keep going?", "Yes or No?");
-    while(money < 50){
+    while(money < 250){
         let y = money+50;
         alert("Great! You now have $" + y);
         const moreMoney = prompt("Keep going?", "Yes or No?");
@@ -117,3 +156,17 @@ const lawnmower = () => {
         }
     }   
 }
+
+// Battery mower cutting
+const batteryMower = () => {
+    const mow = alert("Let's use your battery mower to cut the grass! You get $100 per cut.");
+    alert("Great! You now have $" + money);
+    const moreMoney = prompt("Keep going?", "Yes or No?");
+        if (moreMoney === "Yes" || moreMoney === "yes") {
+            let y = money;
+            money = y+100;
+        } else {
+        stop();
+        }
+}
+
