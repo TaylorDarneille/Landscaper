@@ -126,4 +126,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         tools.oldTimeyLawnmower.quantity += 1;
         decreaseBankBalance(tools.rustyScissors.buy.cost, tools);
     });
+    tools.oldTimeyLawnmower.use.element.addEventListener("click", function(event) {
+        increaseBankBalance(tools.oldTimeyLawnmower.use.servicePrice, tools);
+    });
 });
