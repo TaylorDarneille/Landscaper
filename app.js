@@ -55,6 +55,21 @@ const  startCutting = () => {
                 stop();
             }
      } 
+
+  while(money<1000){
+        const payStudents = prompt("You now have $" + money + "! Would you like to pay students to help you cut the grass!", "Yes or No?");
+            if (payStudents === "Yes" || payStudents === "yes") {
+                starvingStudents();
+            } else if (payStudents === "No" || payStudents === "no") {
+                keepBattery();
+            } else {
+                stop();
+            }
+     }  
+   
+    if (money>1000){
+        alert ("Congratulations! You have won the game!")
+    }
 }  
 
 ///////// ========================== IF NO =========================== ////////////////
@@ -119,6 +134,22 @@ const keepMower = () => {
     }
 }
 
+//Unlimited battery mower cutting
+const keepBattery = () => {
+    let y = money+50;
+    const payStudents = prompt("You now have $" + y + "! Would you like to pay students to help you cut the grass!", "Yes or No?");
+    if (payStudents === "Yes" || payStudents === "yes") {
+     starvingStudents();
+    } else if (payStudents=== "No" || payStudents === "no") {
+        let y = money + 50;
+        money = y;
+        batteryMower();
+    }  else {
+     stop();
+    }
+}
+
+
 ///////// ========================== IF YES =========================== ////////////////
 
 //Scissor cutting
@@ -170,3 +201,15 @@ const batteryMower = () => {
         }
 }
 
+// Student cutting
+const starvingStudents = () => {
+    const mow = alert("Let's use your student team to cut the grass! You get $250 per cut.");
+    alert("Great! You now have $" + money);
+    const moreMoney = prompt("Keep going?", "Yes or No?");
+        if (moreMoney === "Yes" || moreMoney === "yes") {
+            let y = money;
+            money = y+250;
+        } else {
+        stop();
+        }
+}
