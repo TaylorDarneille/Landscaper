@@ -1,7 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+h1{
+  font-family: 'Fredericka the Great';
+  letter-spacing: 2px;
+  font-size: 36px;
+}
 body{
   background: #77DE89;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  padding-top: 250px;
+  padding-top: 150px;
   color: rgb(10, 97, 45);
+  margin: 0;
+}
+
+button{
+  background-color: green;
+  border: none;
+  padding: 10px;
+}
+
+#progress{
+  width: 100%;
+  height: 20px;
+}
+
+#currentProgress{
+  width: 0%;
+  height: 20px;
+  background-color: rgb(10, 97, 45)
 }

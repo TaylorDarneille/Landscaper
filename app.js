@@ -32,53 +32,37 @@ const TOOLS = {
   }
 }
 
-// INITIALIZATION OF STATE 
+// INITIALIZATION OF STATE
 //set active tool to be teeth
 let tool = TOOLS.teeth;
 //initialize day number and money to be zero
 let money = 0;
 let day = 0;
 
+// DOM selectors
+const status = document.querySelector('#status');
+const cutgrassButton = document.querySelector('#grass');
+const resetButton = document.querySelector('#reset');
+const buyButton = document.querySelector('#buy');
+const daynumber = document.querySelector('#daynumber');
+const walletSpan = document.querySelector('#wallet');
+const toolSpan = document.querySelector('#currentTool');
+const progressBar = document.querySelector('#currentProgress')
 
-// Function which prints current status of the game
-const showStatus = () => {
-  console.log(tool)
-  alert(`It is day ${day}. You have ${tool.name} to cut grass, and $${money}.`)
-}
 
-
-// Function which handles user input to move the game along
-const askForAction = () => {
-  showStatus();
-  // Get choice from the user
-  const choice = prompt(`What do you want to do?`, `cut grass / buy tool / reset`);
-  if (choice) {
-    if (choice.toLowerCase() === `cut grass`) {
-      cutGrass();
-    } else if (choice.toLowerCase() === `buy tool`) {
-      buyTool();
-    } else if (choice.toLowerCase() === `reset`){
-      reset();
-    } else {
-      alert(`Not a valid entry`)
-    }
-    //the user hits cancel, so no choice given
-  } else {
-   alert(`I guess you don't find this game very fun...I promise it is, keep going!`)
-  }
-}
-
+// Reset function
 const reset = () =>{
-  alert(`You are resetting the game, you lost your $${money} to garden gnomes and need to start anew`);
+  alert(`You are resetting the game, you lost your $${money} and tools to garden gnomes and need to start anew`);
   // set all TOOLS[tool].has to false, except teeth
   resetTools();
   // reinitialize game state
   tool = TOOLS.teeth;
   day = 0
   money = 0;
+  updateDom("");
 }
 
-
+// Called when user hits the "Buy Tool" button
 const buyTool = () => {
   const toolToBuy = prompt(printToolList(), `scissors / pushmower / lawnmower / team`);
   // user enters incorrect entry
@@ -101,7 +85,8 @@ const buyTool = () => {
     tool = TOOLS[toolToBuy];
     //reduce wallet
     money -= tool.cost;
-    alert(`You have bought ${toolToBuy} and now have ${money}`);
+    let str = `You have bought ${toolToBuy} and now have $${money}`;
+    updateDom(str);
   }
 }
 
@@ -110,10 +95,18 @@ const buyTool = () => {
 const cutGrass = () => {
   money += tool.revenue;
   day++;
-  alert(`You have earned $${tool.revenue} for a total of $${money}`)
-
+  let str = `Day ${day}: Using ${tool.name}, you have earned $${tool.revenue} for a total of $${money}`;
+  updateDom(str);
+  checkWin();
 }
 
+// Check win condition.
+const checkWin = ()=> {
+  if (money>1000){
+    let str =`Looks like you win after ${day} days`;
+    status.innerText = str;
+  }
+}
 
 //this helper function builds up a string with the tools available and if you have them for not, to be used in the store.
 const printToolList = () =>{
@@ -136,10 +129,18 @@ const resetTools = () =>{
   }
 }
 
-
-// main game engine
-while (money < 1000) {
-  askForAction();
+// This helper function updates the DOM, it takes a string which is passed to status
+const updateDom = (str) =>{
+  walletSpan.innerText = money;
+  daynumber.innerText = day;
+  currentTool.innerText = tool.name;
+  // fun progress bar to see how user is doing.
+  progressBar.style.width = `${money/10}%`;
+  status.innerText = str;
 }
-//Win scenario
-alert(`Congratulations, you have built a successful landscaping empire after ${day} days.\nNow go outside and cut my lawn!`)
+
+
+//Event Listeners
+resetButton.addEventListener('click',reset);
+cutgrassButton.addEventListener('click',cutGrass)
+buyButton.addEventListener('click',buyTool)

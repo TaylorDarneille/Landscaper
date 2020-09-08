@@ -8,7 +8,21 @@
   </head>
   <body>
   <h1>Landscaper Tycoon</h1>
-  <p>Follow the instructions on the prompt to build your landscaping empire!</p>
+  <div id="progress">
+    <div id="currentProgress">
+
+    </div>
+  </div>
+  <p>Cut some grass and buy some tools to build your landscaping empire!</p>
+  <p>Day: <span id="daynumber">0</span></p>
+  <p>Wallet: $<span id="wallet">0</span></p>
+  <p>Tool: <span id="currentTool">Teeth</span></p>
+  <button type="button" name="button" id="grass">Cut Grass</button>
+  <button type="button" name="button" id="buy">Buy Tool</button>
+  <button type="button" name="button" id="reset">Reset Game</button>
+
+  <div id="status">
+  </div>
     <script type="text/javascript" src="app.js">
     </script>
   </body>
