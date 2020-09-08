@@ -9,6 +9,14 @@
     alert('You now have $'+ money);
  }
 
+//trying out extra on how to reset page but couldnt figure it out 
+//  function reload() {
+//     const refresh= prompt('Would you like to refresh the page?', 'Yes/No');
+//     if(refresh=== 'Yes' || refresh=== 'yes'){
+//         window.location.reload();
+//     }
+}
+
  let userWon= () => {
      alert('You have won at the art of landscaping. King. (or Queen)');
  }
@@ -146,9 +154,23 @@ while(askCut !== 'cancel'){
         }
     }else if(cutLawn=== 'No' || cutLawn=== 'no'){
         alert('You can\'t make money if you don\'t cut lawns');
+        //reload();
     } 
 }
 
 
 //Question: when you have a nested function, and the nested function has a while or if within it, does it not move on in the body of code until the function is done running? 
 //why 
+
+/*NOTES: for refresh
+- make a refresh function that can be nested later
+- add an if statement to each function so that it looks out for the refresh marker
+- maybe make a response yes/no/refresh
+- if user types refresh then it triggers the refresh function */
+
+// function reload() {
+//     const refresh= prompt('Would you like to refresh the page?', 'Yes/No');
+//     if(refresh=== 'Yes' || refresh=== 'yes'){
+//         location.reload();
+//     }
+// }
