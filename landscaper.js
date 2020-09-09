@@ -1,3 +1,9 @@
+// ===========================================================
+// Welcome to my messy code!
+// Below this is my very first attept at this deliverable but decided 
+// to restart because I realized I was ging to need to tackle this
+//another way in order do this correctly.
+//===========================================================
 // // let userInput = prompt('Did you do the lawn with your teeth?', 'Yes or no')
 // // console.log(userInput)
 
@@ -16,9 +22,14 @@
 // // }
 
 
-
-
-
+// ==========================================================================
+// This is my second attempt at doing this deliverable. I felt likr i was off
+// to a good start but kind of got lost as i went on
+// 
+//I used Mateens apples game code example as a reference but I felt like
+//what he did and what i want to acomplish wasnt enough so i decided to start
+//over again ! 
+//==========================================================================
 
 // // const start = () => {
 // //   money = 0 
@@ -37,8 +48,9 @@
 
 
 
-
-
+//==========================================================================
+// Mateens apple game code from a class lecture i used as a reference.
+//==========================================================================
 // // let apples;
 // // let money;
 
@@ -96,7 +108,18 @@
 //                   // }
                   
                   
-                  
+// ==========================================================================
+// Okay so here, i did a couple of things. I attended Mateens office hours and
+// recommended I sudo code, which i did and helped a ton. The second thing was
+// Trez helped me out and was very kind to walk me step by step what he did in
+// his code and gave me a little push. He did a great job with explaining things
+// so that where i was able to do a better job with the hw down below. The only
+// thing was i got stuck on getting past the scissors part. Once I got there
+// i wanted to go a different direction in my toolStore function and give the
+// user the option to choose between those which tool to use. I was a litle lost
+// from there because i wasnt sure which direction to go.
+// ===========================================================================
+
 // //NUMBER 1
 // //Make money variable to add one dollar everytime
 
@@ -211,209 +234,14 @@
 //Win the game once 1000 dollars is reached
                   
 
-                  
-                  
-                  
-                  
-                  
-                  
+// ===========================================================================
+// Then, I attended Mateens code along and i have a better understanding now. 
+// I definately need more practice with functions but this assignment i would 
+// say I have a decent understanding. I feel like i have the fundementals down,
+// kind of lol.
+// ===========================================================================
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let money = 0
-// let lawnsCut = 0
-
-
-// const userInput = () => {
-  //     money = 0
-//     lawnsCut = 0
-//     askForAction();
-// }
-
-// const showStatus = () => {
-//        alert("You have " + lawnsCut + " lawns cut with your teeth and $" + money)
-// };
-
-// const askForAction = () => {
-//      "Do you want to cut the lawn with your teeth?",
-//      "yes/no"
-//     );  showStatus()
-//     }
-
-// const choice = prompt("hello")
-
-//     if (choice === "buy apple") {
-//         money();
-//     } else if (choice === "eat apple") {
-//         lawnsCut();
-//      } else if (choice === "restart") {
-//         userInput();
-//     }
-
-
-
-// const money = () => {
-//         money -= 1;
-//         askForAction();
-//     };
-                                
-// const lawnsCut = () => {
-//         money--;
-//         askForAction();
-//     };
-                                    
-
-
-
-
-//LECTURE NOTES
-                                    
-                                    
-                                    
-                                    
-                                    // let userInput = prompt('Did you do the lawn with your teeth?', 'Yes or no')
-                                    // console.log(userInput)
-                                    
-                                    
-                                    //PREETS CODE 
-                                    //prompt is always string
-                                    // alert(“You are starting a landscaping business, but all you have are your teeth. Using just your teeth, you can spend the day cutting lawns and make $1.  You can do this as much as you want.“)
-                                    //   const answer = prompt(“Are you using your teeth”, “Yes/No?“);
-                                    //   if (answer === “Yes”) {
-                                    //     alert();
-                                    //   } else if (answer === “No”) {
-                                    //     alert();
-                                    //   }
-                                    // //code taken from Mateen’s lecture
-                                    // let landscaper;
-                                    // let money;
-                                    // const start = () => {
-                                    //   landscaper = 0;
-                                    //   money = 0;
-                                    //   askForAction(); //invoking function
-                                    // };
-                                    // const showStatus = () => {
-                                    //   alert(“You made a dollar, you now have $” + money);
-                                    // };
-                                    // const askForAction = () => {
-                                    //   showStatus();
-                                    //   const choice = prompt(
-                                    //     “What do you want to do?“,
-                                    //     “cut lawns / restart”
-                                    //   );
-                                    //   if (choice === “cut lawns”) {
-                                    //     cutLawns();
-                                    //   } else if (choice === “restart”) {
-                                    //     start();
-                                    //   }
-                                    // };
-                                    // const cutLawns = () => {
-                                    //   money++;
-                                    //   askForAction();
-                                    // }
-                                    // start();
-
-
-
-
-
-
-//METEEN CODE ALONG
-// const greet = () => {
-//   alert('You are starting a landscaping business, but all you have are your teeth')
-// }
-// greet ()
-// //variables to store values in
-// let lawnCut
-// let money
-// let tool 
-// let toolBox
-
-// //the start function
-// const start  = () => {
-//   lawnCut = 0 
-//   money = 0 
-//   tool = 'teeth'
-//   askForAction()
-// }
-// //SHOWS how many lawns have been ciy and how much money is earned
-// const showStatus = () => {
-//   alert(`You have cut ${lawncut} lawns and have $ ${money}`)//ES6 Templating
-// }
-
-
-// //actions to handle each event
-// const askForAction = () => {
-//   if (money === 1000){
-//     alert('WINNER WINNER CHICKEN DINNER')
-//   } else {
-//     showStatus()
-//     if(money === 5){
-//       storeTools()
-//     }
-  
-//     const choice = prompt('Will you cut the lawn?', 'Yes/No'){
-//       if (choice === 'Yes' || choice === 'yes'){
-//       cutLawns()
-//       }
-//     }
-// }
-
-// const toolStore = () => {
-//   //check i f money is equal to 5 and if toolBox doesnt have rusty scissors
-//   if(money === 5 && toolBox.includes('rustyScissors') === false){
-//     askForScissors()
-//   }
-// }
-
-
-
-// //checks toools and uses to tool to sdetermine which tyoe of that
-// const cutLawns = () => {
-//   if(tool === 'teeth'){
-//     eatLawns()
-//   }
-// }
-
-// //eatLawns will add $1
-// const eatLawns = () => {
-//   lawnsCut++
-//   money += 1
-//   askForAction()
-// }
-
-// const askForScissors = () => {
-//   const wantScissors = prompt('Do you want to buy some rusty scissors for $5?', 'Yes/No')
-//   if(wantScissors === 'Yes' || wantScissors === 'yes'){
-//     money -= 5
-//     tool = 'rustyScissors'
-//     toolBox.push('rustyScissors')
-//   } else if(wantScissors === 'No' || wantScissors === 'no'){
-//   }
-// }
-
-// start()
 
 
 
@@ -648,6 +476,11 @@ const cutLawns = () => {
     cutWithStudents();
   }
 };
+
+
+
+
+
 // each function handles different tools
 const eatLawns = () => {
   lawnsCut++;
