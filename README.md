@@ -1,4 +1,4 @@
-[![General Assembly Logo](../../../../ga_cog.png)](https://generalassemb.ly)
+<!-- [![General Assembly Logo](../../../../ga_cog.png)](https://generalassemb.ly)
 
 # Landscaper
 
@@ -174,4 +174,4 @@ For this section of the homework, inside the `landscaper` folder you should have
 
 *Copyright 2018, General Assembly Space. Licensed under [CC-BY-NC-SA, 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*
 
-Adapted from [SEI-MAE](https://git.generalassemb.ly/Software-Engineering-Immersive-Remote/SEIR-MAE-INSTRUCTORS/blob/master/unit_1/w03d2/homework/landscaper/README.md)
+Adapted from [SEI-MAE](https://git.generalassemb.ly/Software-Engineering-Immersive-Remote/SEIR-MAE-INSTRUCTORS/blob/master/unit_1/w03d2/homework/landscaper/README.md) -->
