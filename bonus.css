@@ -1,0 +1,28 @@
+body {
+    background-color:green
+}
+img{
+    text-align: center;
+    width: 55%; 
+    height: 55%; 
+    display:block;
+    margin:0 auto;
+    border:10px solid grey;
+}
+
+p{
+    text-align: center;
+}
+
+h1{
+    text-align:center;
+}
+
+.center {
+    margin: 0 auto;
+    top: 50%;
+    text-align:center;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
