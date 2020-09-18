@@ -1,5 +1,8 @@
 [![General Assembly Logo](../../../../ga_cog.png)](https://generalassemb.ly)
 
+# JS-only version & DOM verison
+
+
 # Landscaper
 
 ![studio ghibli landscape](https://peakmemory.files.wordpress.com/2014/06/cliufqx.jpg)
